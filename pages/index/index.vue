@@ -383,7 +383,7 @@
 		data() {
 			return {
 				height: 0, 
-				top:0,
+				top:0, 
 				activeName: '1',
 				mescroll: null, // mescroll实例对象 (此行可删,mixins已默认)
 				downOption: {
