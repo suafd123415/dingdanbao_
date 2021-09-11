@@ -1,0 +1,286 @@
+{
+  "interface1": "http://txjt.cn1.utools.club",
+  "interface3": "http://47.104.229.228:8080",
+  "interface": "http://101.201.147.68:8080",
+  "interface4": "http://txjt.cn1.utools.club",
+  "interface5": "http://82.157.97.185:8080",
+  "interface6": "http://shoptxj.cn.utools.club",
+  "interface7": "http://173.100.1.109:8080",
+  "data": [
+    {
+      "interface": "/shop/app/login",
+      "name": "登录",
+      "subscript": 0
+    },
+    {
+      "interface": "/shop/app/sendCode",
+      "name": "发送验证码",
+      "subscript": 1
+    },
+    {
+      "interface": "/shop/app/register",
+      "name": "注册",
+      "subscript": 2
+    },
+    {
+      "interface": "/shop/app/forgetPassword",
+      "name": "忘记密码",
+      "subscript": 3
+    },
+    {
+      "interface": "/shop/app/order/query",
+      "name": "首页",
+      "subscript": 4
+    },
+    {
+      "interface": "/shop/app/errands/getErrandsPre",
+      "name": "详情",
+      "subscript": 5
+    },
+    {
+      "interface": "/shop/app/errands/updateSettings",
+      "name": "选择配送",
+      "subscript": 6
+    },
+    {
+      "interface": "/shop/app/errands/addordergratuityfee",
+      "name": "加小费",
+      "subscript": 7
+    },
+    {
+      "interface": "/shop/app/errands/callRider",
+      "name": "呼叫",
+      "subscript": 8
+    },
+    {
+      "interface": "/shop/app/errands/cancelCall",
+      "name": "取消呼叫",
+      "subscript": 9
+    },
+    {
+      "interface": "/shop/app/errands/getSettings",
+      "name": "获取自定义呼叫设置",
+      "subscript": 10
+    },
+    {
+      "interface": "/shop/app/updatePhone",
+      "name": "更改手机号",
+      "subscript": 11
+    },
+    {
+      "interface": "/shop/app/errands/getErrandsPre",
+      "name": "呼叫骑手详情",
+      "subscript": 12
+    },
+    {
+      "interface": "/shop/app/findUser",
+      "name": "查找用户手机号,店铺名称,地址",
+      "subscript": 13
+    },
+    {
+      "interface": "/shop/app/updateUser",
+      "name": "修改用户信息",
+      "subscript": 14
+    },
+    {
+      "interface": "/shop/app/pay/querySendBalance",
+      "name": "获取我的信息（余额 个性签名 姓名 ）",
+      "subscript": 15
+    },
+    {
+      "interface": "/shop/app/bill/queryBillDate",
+      "name": "账单",
+      "subscript": 16
+    },
+    {
+      "interface": "/shop/app/bill/queryHistoryBillDate",
+      "name": "查看30条历史账单",
+      "subscript": 17
+    },
+    {
+      "interface": "/shop/app/bill/queryBillEveryDayOrder",
+      "name": "获取账单(天)",
+      "subscript": 18
+    },
+    {
+      "interface": "/shop/app/bill/queryBillOrderInfo",
+      "name": "账单 获取订单详情",
+      "subscript": 19
+    },
+    {
+      "interface": "/shop/app/custom/errands/getErrandsPrice",
+      "name": "自定义配送获取价格",
+      "subscript": 20
+    },
+    {
+      "interface": "/shop/app/custom/errands/call",
+      "name": "自定义配送呼叫",
+      "subscript": 21
+    },
+    {
+      "interface": "/shop/app/getShopAddress",
+      "name": "获取店铺位置",
+      "subscript": 22
+    },
+    {
+      "interface": "/shop/app/pay/prePay",
+      "name": "H5微信支付（预支付）",
+      "subscript": 23
+    },
+    {
+      "interface": "/shop/app/pay/checkPayOrder",
+      "name": "H5微信支付（客户端检测是否成功）",
+      "subscript": 24
+    },
+    {
+      "interface": "/shop/app/goods/queryCategoryList",
+      "name": "获取商品分类(商家app)",
+      "subscript": 25
+    },
+    {
+      "interface": "/shop/app/goods/queryCategoryGoodsInfo",
+      "name": "根据分类id查找商品信息(商家app)",
+      "subscript": 26
+    },
+    {
+      "interface": "/shop/app/goods/updateGoodsMoney",
+      "name": "商家修改价格",
+      "subscript": 27
+    },
+    {
+      "interface": "/shop/app/goods/goodsShelves",
+      "name": "商品上下架",
+      "subscript": 28
+    },
+    {
+      "interface": "/shop/app/goods/updateGoodsMoney",
+      "name": "商家修改价格",
+      "subscript": 29
+    },
+    {
+      "interface": "/shop/app/order/queryErrorOrderInfoList",
+      "name": "商家退款异常订单列表",
+      "subscript": 30
+    },
+    {
+      "interface": "/shop/app/order/refund/agree",
+      "name": "商家同意退款",
+      "subscript": 31
+    },
+    {
+      "interface": "/shop/app/order/refund/disagree",
+      "name": "商家拒绝",
+      "subscript": 32
+    },
+    {
+      "interface": "/shop/app/pay/queryPayGoodsList",
+      "name": "获取充值商品列表",
+      "subscript": 33
+    },
+    {
+      "interface": "/shop/app/order/cancel/agree",
+      "name": "商家同意 用户取消订单",
+      "subscript": 34
+    },
+    {
+      "interface": "/shop/app/order/cancel/refuse",
+      "name": "商家拒绝 用户取消订单",
+      "subscript": 35
+    },
+    {
+      "interface": "/shop/app/sendCode",
+      "name": "发送验证码",
+      "subscript": 36
+    },
+    {
+      "interface": "/shop/app/errands/queryRiderPrice",
+      "name": "获取多个骑手价格",
+      "subscript": 37
+    },
+    {
+      "interface": "/shop/app/bill/shopChecking",
+      "name": "财务对账",
+      "subscript": 38
+    },
+    {
+      "interface": "/shop/app/bill/queryShopCheckingDetail",
+      "name": "财务对账详情信息",
+      "subscript": 39
+    },
+    {
+      "interface": "/shop/app/updateShopPhone",
+      "name": "修改手机号",
+      "subscript": 40
+    },
+    {
+      "interface": "/shop/app/updatePassWord",
+      "name": "修改登录密码",
+      "subscript": 41
+    },
+    {
+      "interface": "/shop/app/getShopCentreByList",
+      "name": "获取商家中心列表",
+      "subscript": 42
+    },
+    {
+      "interface": "/shop/app/updateShopBusinessStatus",
+      "name": "店铺修改营业状态",
+      "subscript": 43
+    },
+    {
+      "interface": "/shop/app/updateShopBusinessTime",
+      "name": "修改门店营业时间",
+      "subscript": 44
+    },
+    {
+      "interface": "/shop/app/order/reprintReceipts",
+      "name": "商家补打小票",
+      "subscript": 45
+    },
+    {
+      "interface": "/shop/app/errands/manualCall/queryRiderPrice",
+      "name": "手动呼叫（生成价格-> 输入完用户收件地址后 向服务器请求  过三秒后 请求获取配送价格接口）",
+      "subscript": 46
+    },
+    {
+      "interface": "/shop/app/errands/manualCall",
+      "name": "手动呼叫",
+      "subscript": 47
+    },
+    {
+      "interface": "/shop/app/order/shopFinishOrder",
+      "name": "商家手动确认小程序订单",
+      "subscript": 48
+    },
+    {
+      "interface": "/shop/app/search/date",
+      "name": "日期",
+      "subscript": 49
+    },
+    {
+      "interface": "/shop/app/search",
+      "name": "检索",
+      "subscript": 50
+    },
+    {
+      "interface": "/shop/app/ocr/General",
+      "name": "图片识别",
+      "subscript": 51
+    },
+    {
+      "interface": "/shop/app/ocr/address",
+      "name": "地址识别",
+      "subscript": 52
+    },
+    {
+      "interface": "/shop/app/bill/queryErrands",
+      "name": "配送账单",
+      "subscript": "53"
+    },
+    {
+      "interface": "/shop/app/bill/queryPayInfo",
+      "name": "充值记录",
+      "subscript": 54
+    }
+  ]
+}

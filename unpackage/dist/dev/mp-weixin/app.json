@@ -1,0 +1,91 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/message/message",
+    "pages/finance/finance",
+    "pages/my/my",
+    "pages/setUp/setUp",
+    "pages/about/about",
+    "pages/accountSecurity/accountSecurity",
+    "pages/modify/modify",
+    "pages/businessCenter/businessCenter",
+    "pages/login/login",
+    "pages/record/record",
+    "pages/manual/manual",
+    "pages/recharge/recharge",
+    "pages/search/search",
+    "pages/payList/payList",
+    "pages/financialDetails/financialDetails"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#282828",
+    "selectedColor": "#207DED",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "订单",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/image/icon_bottom_order.png",
+        "selectedIconPath": "static/image/icon_bottom_order1.png"
+      },
+      {
+        "text": "商品",
+        "pagePath": "pages/message/message",
+        "iconPath": "static/image/icon_bottom_shop.png",
+        "selectedIconPath": "static/image/icon_bottom_shop.png"
+      },
+      {
+        "text": "财务",
+        "pagePath": "pages/finance/finance",
+        "iconPath": "static/image/icon_bottom_money.png",
+        "selectedIconPath": "static/image/icon_bottom_money1.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "static/image/icon_bottom_my.png",
+        "selectedIconPath": "static/image/icon_bottom_my1.png"
+      }
+    ]
+  },
+  "permission": {},
+  "usingComponents": {
+    "demo-block": "/wxcomponents/vant/demo-block/index",
+    "van-action-sheet": "/wxcomponents/vant/action-sheet/index",
+    "van-area": "/wxcomponents/vant/area/index",
+    "van-button": "/wxcomponents/vant/button/index",
+    "van-cell": "/wxcomponents/vant/cell/index",
+    "van-cell-group": "/wxcomponents/vant/cell-group/index",
+    "van-checkbox": "/wxcomponents/vant/checkbox/index",
+    "van-checkbox-group": "/wxcomponents/vant/checkbox-group/index",
+    "van-col": "/wxcomponents/vant/col/index",
+    "van-dialog": "/wxcomponents/vant/dialog/index",
+    "van-field": "/wxcomponents/vant/field/index",
+    "van-icon": "/wxcomponents/vant/icon/index",
+    "van-loading": "/wxcomponents/vant/loading/index",
+    "van-nav-bar": "/wxcomponents/vant/nav-bar/index",
+    "van-notice-bar": "/wxcomponents/vant/notice-bar/index",
+    "van-notify": "/wxcomponents/vant/notify/index",
+    "van-panel": "/wxcomponents/vant/panel/index",
+    "van-popup": "/wxcomponents/vant/popup/index",
+    "van-progress": "/wxcomponents/vant/progress/index",
+    "van-radio": "/wxcomponents/vant/radio/index",
+    "van-radio-group": "/wxcomponents/vant/radio-group/index",
+    "van-tab": "/wxcomponents/vant/tab/index",
+    "van-tabs": "/wxcomponents/vant/tabs/index",
+    "van-transition": "/wxcomponents/vant/transition/index",
+    "van-collapse": "/wxcomponents/vant/collapse/index",
+    "van-collapse-item": "/wxcomponents/vant/collapse-item/index",
+    "van-picker": "/wxcomponents/vant/picker/index",
+    "van-overlay": "/wxcomponents/vant/overlay/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}
