@@ -1,0 +1,23 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/businessCenter/businessCenter",
+          "pathName": "pages/businessCenter/businessCenter",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

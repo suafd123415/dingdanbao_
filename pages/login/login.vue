@@ -63,6 +63,7 @@
               color="#5563ED"
               @click="codeClick()"
               class="code"
+			  size='small'
 			  style="line-height: 48rpx;"
               type="default"
               >{{ code }}</button
@@ -117,11 +118,6 @@ export default {
 	//#endif
   },
   methods: {
-    keyDown(e) {
-      if (e.keyCode === 13) {
-        this.butType();
-      }
-    },
     butType() {
       var that = this;
       that.$utile.throttle(
@@ -249,9 +245,9 @@ export default {
     },
     registered(e) {
       var that = this;
-      that.$router.push({
-        path: "/registered"
-      });
+      uni.navigateTo({
+      	url:'../registered/registered'
+      })
     },
     goBack() {
       var that = this;
@@ -273,8 +269,7 @@ export default {
         return;
       } else {
         if (that.val.userPhone != "") {
-          that
-            .$axios({
+          uni.request({
               method: "post",
               url: that.$axiosw.interface + that.$axiosw.data[36].interface,
               data: {
@@ -289,12 +284,12 @@ export default {
                 }
               ],
               header: {
-                Authorization: JSON.parse(window.localStorage.getItem("token")),
+                Authorization: JSON.parse(uni.getStorageSync("token")),
                 "Content-Type": "application/x-www-form-urlencoded"
               }
             })
             .then(function(e) {
-              if (e.data.status == 0) {
+              if (e[1].data.status == 0) {
                 that.getSecond(60);
               } else {
                 that.$toast(e.data.msg);
@@ -348,11 +343,9 @@ export default {
         window.localStorage.getItem("loginAccount")
       ).passWord;
     }
-    window.addEventListener("keydown", this.keyDown);
   },
   destroyed() {
     // 销毁事件
-    window.rpxoveEventListener("keydown", this.keyDown, false);
   }
 };
 </script>
@@ -396,7 +389,7 @@ export default {
 }
 
 .logo_div_title {
-  width: 580rpx;
+  width: 630rpx;
   margin: 0 auto 0;
   font-size: 28rpx;
   color: #989898;

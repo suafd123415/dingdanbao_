@@ -1,0 +1,78 @@
+
+.dis_none {
+	display: none;
+}
+.appproject {
+	margin-top: 8rpx;
+	overflow-x: hidden;
+	overflow-y: auto;
+	min-height: 200rpx;
+	/* background-color: #F6F6F6; */
+}
+.record_title_span_div ._span {
+	/* vertical-align: middle; */
+}
+.selectRider_img {
+	vertical-align: middle;
+	width: 32rpx;
+	height: 32rpx;
+	margin-right: 0rpx;
+}
+.record_div {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+.record_title_span {
+	font-size: 30rpx;
+}
+.record_title_div {
+	/* width: 7.34rpx; */
+	height: 170rpx;
+	border-radius: 4rpx;
+	margin: 20rpx auto 0 auto;
+	font-size: 30rpx;
+	background-color: #fff;
+	padding: 20rpx;
+	line-height: 60rpx;
+}
+.record_span {
+	color: #333;
+	font-size: 35rpx;
+	line-height: 100rpx;
+	text-align: center;
+	display: block;
+}
+.record {
+	background: #f6f6f6;
+}
+.record_title {
+	height: 74rpx;
+	line-height: 96rpx;
+	text-align: center;
+	font-size: 34rpx;
+	color: #000000;
+	/* position: relative; */
+	/* position: fixed; */
+	top: 0;
+}
+.record_title>._img {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 96rpx;
+	height: 96rpx;
+	z-index: 99;
+}
+.record_title>._div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #f6f6f6;
+	height: 96rpx;
+}
+

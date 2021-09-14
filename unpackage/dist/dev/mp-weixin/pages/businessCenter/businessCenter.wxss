@@ -1,0 +1,109 @@
+
+.appmy {
+  width: 100%;
+  min-height: 100%;
+  background-color: #f5f5f5;
+}
+.my_title_but {
+  width: 74rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  text-align: center;
+}
+.my_title_but2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.businessCenter_goods {
+  border-top: 20rpx solid #f5f5f5;
+  background-color: #fff;
+  overflow: hidden;
+}
+.businessCenter_goods_left {
+  line-height: 100rpx;
+  float: left;
+  font-size: 0;
+}
+.businessCenter_goods_left > ._span {
+  font-size: 32rpx;
+  margin: 0 28rpx;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  max-width: 300rpx;
+  display: block;
+}
+.businessCenter_goods_left > button {
+  display: inline-block;
+  vertical-align: middle;
+  width: 122rpx;
+  height: 48rpx;
+  background: #5563ed;
+  border-radius: 24rpx 24rpx 24rpx 0;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 48rpx;
+  margin: -60rpx 28rpx 0;
+}
+.businessCenter_goods_left > .businessCenter_goods_left_button {
+  border-radius: 24rpx 24rpx 0 24rpx;
+  background-color: #a1a1a1;
+}
+.businessCenter_goods_right {
+  width: 340rpx;
+  float: right;
+  overflow: hidden;
+}
+.businessCenter_goods_title {
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #898989;
+}
+.businessCenter_goods_title > ._span {
+  vertical-align: middle;
+}
+.businessCenter_goods_title_buttom {
+  background-color: transparent;
+  border-color: transparent;
+  float: right;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  padding: 0 30rpx 0 10rpx;
+}
+.businessCenter_goods_title_but {
+  padding: 10rpx;
+  font-size: 32rpx;
+  vertical-align: middle;
+}
+.businessCenter_goods_time {
+  font-size: 0rpx;
+  line-height: 60rpx;
+}
+.businessCenter_goods_time > ._i {
+  color: #898989;
+  font-size: 28rpx;
+  vertical-align: middle;
+  margin: 0 14rpx;
+  font-style: normal;
+}
+.businessCenter_goods_time > ._span {
+  vertical-align: middle;
+  font-size: 30rpx;
+  color: #5563ed;
+}
+.businessCenter_goods_time_calendar {
+  width: 24rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.businessCenter_goods_time_delete {
+  width: 24rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+

@@ -10,9 +10,7 @@
 				<div class="inline">
 					<img src="../../static/image/icon_seaver.png" />
 				</div>
-				<input style="display: inline-block;" @keyup.13="searchclick" type="number" v-model="value"
-					class="search_tit_input" oninput="if(value.length>5)value=value.slice(0,5);if(value<0)value=0"
-					placeholder="订单号流水号" />
+				<input v-model='value' style="display: inline-block;" @keyup.13="searchclick" type="number" class="search_tit_input" placeholder="订单号流水号" />
 				<div class="inline" v-if="value.length > 0" @click="value = ''">
 					<van-icon name="cross" />
 				</div>
@@ -185,7 +183,7 @@
 							{{ item.address }}
 							<div class="orderList_address_right_div">
 								顾客下单时间<span class="orderList_address_right_div_span">{{
-	  		                item.createTime1
+	  		                item.createTime
 	  		              }}</span>
 							</div>
 						</div>
@@ -325,9 +323,14 @@
 				//请求数据
 				var that = this;
 				that.sua = true
+				console.log(that.value,326)
 				// setTimeout(() => {
 				// 	that.mescroll.resetUpScroll()
 				// }, 1500)
+			},
+			onKeyInput(event){
+				console.log(event)
+			this.value = event.target.value	
 			},
 			upCallback(page) {
 				console.log(page)

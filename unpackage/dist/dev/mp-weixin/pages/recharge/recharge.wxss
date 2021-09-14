@@ -1,0 +1,66 @@
+
+.record_span.data-v-723b7266 {
+  color: #333;
+  font-size: 35rpx;
+  line-height: 100rpx;
+  text-align: center;
+  display: block;
+}
+.appproject.data-v-723b7266 {
+  margin-top: 8rpx;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 200rpx;
+  /* background-color: #F6F6F6; */
+}
+.record_title_span.data-v-723b7266 {
+  font-size: 30rpx;
+}
+.record_div.data-v-723b7266 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.record_title_div.data-v-723b7266 {
+  /* width: 7.34rpx; */
+  height: 150rpx;
+  border-radius: 4rpx;
+  margin: 20rpx auto 0 auto;
+  font-size: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  line-height: 80rpx;
+}
+.recharge.data-v-723b7266 {
+  background: #f6f6f6;
+}
+.recharge_title.data-v-723b7266 {
+  height: 74rpx;
+  line-height: 96rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #000000;
+  /* position: relative; */
+  /* position: fixed; */
+  top: 0;
+}
+.recharge_title > ._img.data-v-723b7266 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 96rpx;
+  height: 96rpx;
+  z-index: 99;
+}
+.recharge_title > ._div.data-v-723b7266 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f6f6f6;
+  height: 96rpx;
+}
+

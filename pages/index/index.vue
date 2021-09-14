@@ -1,17 +1,21 @@
 <template>
 	<view class="">
-		<view class="my_title" :style="{height:height+50+'px'}">
-			<view :style="{paddingTop:top+'rpx'}" style="z-index: 999;padding-left: 15rpx;">
-				<van-button color="#EDEDED" class="my_title_but my_title_but1" @click="setUp">
+		<view class="my_title" :style="{height:height+54+'px'}">
+			<view :style="{paddingTop:top+'rpx'}" style="z-index: 999;padding-left: 15rpx;    display: flex;
+    justify-content: space-between;
+    width: 550rpx;
+    align-items: stretch;">
+				<van-button size='small' color="#EDEDED" class="my_title_but my_title_but1" @click="setUp">
 					<img class="my_title_but_img" src="../../static/image/icon_financial_calendar.png" />
 				</van-button>
-				<van-button color="#EDEDED" class="my_title_but my_title_but1" style='left: 500rpx;' @click="search">
+				<text>今日全部渠道</text>
+				<van-button size='small' color="#EDEDED" class="my_title_but my_title_but1" style='left: 500rpx;'
+					@click="search">
 					<img class="my_title_but_img" src="../../static/image/icon_seaver.png" />
 				</van-button>
 			</view>
-			今日全部渠道
 		</view>
-<view>
+		<view>
 			<uni-calendar ref="calendar" :insert="false" @confirm="confirm" />
 		</view>
 		<mescroll-body ref="mescrollRef" @init="mescrollInit" @up="upCallback" @down="downCallback" :down="downOption"
@@ -382,8 +386,8 @@
 		mixins: [MescrollMixin], // 使用mixin
 		data() {
 			return {
-				height: 0, 
-				top:0, 
+				height: 0,
+				top: 0,
 				activeName: '1',
 				mescroll: null, // mescroll实例对象 (此行可删,mixins已默认)
 				downOption: {
@@ -455,7 +459,7 @@
 			that.id = JSON.parse(uni.getStorageSync("id"));
 			that.token = JSON.parse(uni.getStorageSync("token"));
 			//#ifdef MP
-			this.top = 80
+			this.top = 60
 			//#endif
 			// 获取手机状态栏高度
 			uni.getSystemInfo({
@@ -465,59 +469,24 @@
 				}
 			})
 		},
+		onShow() {
+			this.mescroll.triggerDownScroll()
+		},
 		mounted() {
 			var that = this;
 			that.id = JSON.parse(uni.getStorageSync("id"));
 			that.token = JSON.parse(uni.getStorageSync("token"));
-			setInterval(()=>{
-				// that.mescroll.triggerDownScroll()
-				// that.into3()
-			},5000)
+			setInterval(() => {}, 5000)
 		},
 		methods: {
-			// into3() {
-			//       //请求数据
-			//       var that = this;
-			//       that.$utile.throttle(
-			//         function() {
-			//           uni.request({
-			//               method: "post",
-			//               url: that.$axiosw.interface + that.$axiosw.data[4].interface,
-			//               data: {
-			//                 shopId: that.id,
-			//                 page: 0,
-			//                 num: 5,
-			//                 type: "all"
-			//               },
-			//               transformRequest: [
-			//                 function(data) {
-			//                   let ret = "";
-			//                   ret = that.$qs.stringify(data);
-			//                   return ret;
-			//                 }
-			//               ],
-			//               header: {
-			//                 Authorization: that.token,
-			//                 "Content-Type": "application/x-www-form-urlencoded"
-			//               }
-			//             })
-			//             .then(function(res) {
-			// 				console.log(res[1].data)
-			// 				that.dataList=res[1].data.data.order_list.reverse()
-			//             });
-			//         },
-			//         500,
-			//         800
-			//       );
-			//     },
-			setUp(){
+			setUp() {
 				this.$refs.calendar.open();
 			},
 			search() {
-			     uni.navigateTo({
-			     	url:'../search/search'
-			     })
-			    },
+				uni.navigateTo({
+					url: '../search/search'
+				})
+			},
 			callRider(order) {
 				//拨打骑手电话
 				this.show.show = true;
@@ -789,7 +758,7 @@
 					}
 				})
 			},
-			confirm(e){
+			confirm(e) {
 				console.log(e)
 			},
 			open() {
@@ -1100,16 +1069,19 @@
 		line-height: 34rpx;
 		float: left;
 	}
-.my_title_but {
+
+	.my_title_but {
 		width: 95rpx;
 		height: 80rpx;
 		line-height: 80rpx;
 		text-align: center;
 	}
+
 	.my_title_but1 {
-		position: absolute;
+		/* position: absolute; */
 		left: 0;
 	}
+
 	.orderList_address_left>i {
 		display: inline-block;
 		width: 20rpx;
@@ -1361,7 +1333,7 @@
 		line-height: 74rpx;
 		position: relative;
 		display: flex;
-		padding:0 10rpx;
+		padding: 0 10rpx;
 		justify-content: space-between;
 	}
 

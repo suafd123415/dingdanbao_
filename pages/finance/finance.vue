@@ -59,10 +59,10 @@
 						<text class="order_list_title">#{{ item.dayCode }}</text>
 					</view>
 					<view>
-						<view class="order_list_time">{{ (new Date(item.clearingTime).getHours())+(':')+(new Date(item.clearingTime).getMinutes() < 10
+						<view class="order_list_time">{{ (new Date(item.clearingTime.replace(/-/g, "/")).getHours())+(':')+(new Date(item.clearingTime.replace(/-/g, "/")).getMinutes() < 10
                   ? "0" +
-                    new Date(item.clearingTime).getMinutes()
-                  : new Date(item.clearingTime).getMinutes())}}</view>
+                    new Date(item.clearingTime.replace(/-/g, "/")).getMinutes()
+                  : new Date(item.clearingTime.replace(/-/g, "/")).getMinutes())}}</view>
 						<img v-if="item.orderType == 10" class="order_list_middle_img" fit="scale-down"
 							src="../../static/image/icon_freshCounty.png" />
 						<img v-else-if="item.orderType == 2" class="order_list_middle_img" fit="scale-down"
@@ -725,14 +725,15 @@
 
 	.todayFinancial {
 		margin-top: 12rpx;
-		height: 100rpx;
+		height: 120rpx;
 		font-size: 0;
 		background-color: #fff;
 	}
 
 	.todayFinancial>view {
 		display: inline-block;
-		vertical-align: revert;
+		/* vertical-align: revert; */
+		vertical-align: middle;
 		overflow: hidden;
 	}
 

@@ -5,6 +5,13 @@
 		},
 		onShow: function() {
 			console.log('App Show')
+			// let userInfo=uni.getStorageSync('token')
+			// console.log(!userInfo)
+			// if(!userInfo){
+			// 	uni.reLaunch({
+			// 		url:'pages/login/login'
+			// 	})
+			// }
 		},
 		onHide: function() {
 			console.log('App Hide')

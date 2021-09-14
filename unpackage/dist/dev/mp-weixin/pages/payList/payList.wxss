@@ -1,0 +1,93 @@
+
+.payList {
+  /* position: fixed; */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #f6f6f6;
+  overflow: hidden;
+}
+.payList_list {
+  width: 700rpx;
+  margin: 28rpx auto 700rpx;
+  overflow: hidden;
+}
+.payList_title {
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #000000;
+  position: relative;
+}
+.payList_title > ._img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96rpx;
+  height: 96rpx;
+}
+.payList_list_num {
+  width: 200rpx;
+  height: 304rpx;
+  border-radius: 2rpx;
+  border: 2rpx solid #757575;
+  margin-right: 40rpx;
+  margin-bottom: 28rpx;
+  float: left;
+  position: relative;
+}
+.payList_list_num1 {
+  border-color: #5563ed;
+}
+.payList_list_num:nth-child(3n) {
+  margin-right: 0;
+}
+.payList_list_num > ._img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 44rpx;
+  height: 44rpx;
+}
+.payList_list_num_top {
+  height: 250rpx;
+  line-height: 250rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #c67ae7;
+  border-bottom: 0.01rpx solid #c6c6c6;
+}
+.payList_list_num_button {
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 52rpx;
+  height: 52rpx;
+  color: #c67ae7;
+}
+.but-no {
+  color: #131313;
+}
+.payList_but {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+  bottom: 40rpx;
+  width: 704rpx;
+}
+.payList_but_in {
+  width: 704rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  font-size:32rpx;
+  color: #626eee;
+  background: #fff;
+}
+.payList_but_in:nth-child(1) {
+  color: #fff;
+  background: #626eee;
+}
+

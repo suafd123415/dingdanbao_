@@ -13,9 +13,26 @@
     </view> -->
     <view class="password" v-if="type == 1">
       <view class="password_list" v-for="(item, i) in val" :key="i">
+		  <span>{{ item.name }}</span>
+		  <input
+		    v-if="item.type == false"
+		    type="password"
+		    class="password_list_input"
+		    placeholder="请输入密码"
+		    maxlength="6"
+		    v-model="item.value"
+		  />
+		  <input
+		    v-else="item.type == true"
+		    class="password_list_input"
+		    placeholder="请输入密码"
+		    maxlength="6"
+		    v-model="item.value"
+		  />
         <van-button
           color="#fff"
-          type="info"
+          type="default"
+		  size='small'
           class="password_list_but"
           @click="sWitch(i)"
         >
@@ -30,22 +47,7 @@
             src="../../static/image/eyes2.png"
           />
         </van-button>
-        <span>{{ item.name }}</span>
-        <input
-          v-if="item.type == false"
-          type="password"
-          class="password_list_input"
-          placeholder="请输入密码"
-          maxlength="6"
-          v-model="item.value"
-        />
-        <input
-          v-else="item.type == true"
-          class="password_list_input"
-          placeholder="请输入密码"
-          maxlength="6"
-          v-model="item.value"
-        />
+       
       </view>
 
       <button
@@ -151,8 +153,7 @@ export default {
       } else {
         var that = this;
         if (that.phoneval.userPhone != "") {
-          that
-            .$axios({
+          uni.request({
               method: "post",
               url: that.$axiosw.interface + that.$axiosw.data[36].interface,
               data: {
@@ -166,13 +167,13 @@ export default {
                   return ret;
                 }
               ],
-              headers: {
+              header: {
                 Authorization: that.token,
                 "Content-Type": "application/x-www-form-urlencoded"
               }
             })
             .then(function(res) {
-              var e = that.interactionDetection(res);
+              var e = that.interactionDetection(res[1]);
               if (e.data.status == 0) {
                 that.getSecond(60);
               }
@@ -216,8 +217,7 @@ export default {
     },
     changePasswordin() {
       var that = this;
-      that
-        .$axios({
+      uni.request({
           method: "post",
           url: that.$axiosw.interface + that.$axiosw.data[41].interface,
           data: {
@@ -232,20 +232,30 @@ export default {
               return ret;
             }
           ],
-          headers: {
+          header: {
             Authorization: that.token,
             "Content-Type": "application/x-www-form-urlencoded"
           }
         })
         .then(function(res) {
-          var e = that.interactionDetection(res);
+          var e = that.interactionDetection(res[1]);
           if (e.data.status == 0) {
-            that.$toast("修改成功");
+            uni.showToast({
+            	icon: "success",
+            	title:'修改成功',
+            	duration: 3000,
+            	position: 'top'
+            })
             setTimeout(() => {
               that.$router.go(-1); //返回上一层
             }, 500);
           } else {
-            that.$toast(e.data.msg);
+            uni.showToast({
+            	icon: "none",
+            	title: e.data.msg,
+            	duration: 3000,
+            	position: 'top'
+            })
           }
         });
     },
@@ -343,6 +353,7 @@ export default {
 }
 
 .password_list {
+	display: flex;
   padding: 0 24rpx;
   border-bottom: 2rpx solid #e5e5e5;
   height: 84rpx;
@@ -368,7 +379,7 @@ export default {
 .password_list > span {
   display: inline-block;
   vertical-align: top;
-  width: 140rpx;
+  width: 350rpx;
 }
 
 .password_list_input {

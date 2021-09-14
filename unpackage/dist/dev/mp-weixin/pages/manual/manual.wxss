@@ -1,0 +1,334 @@
+.manual_in_view_right_city.data-v-314fa306 .van-cell {
+  padding: 20rpx 0;
+}
+
+
+.shn_button_cancel {
+	background: #0aa1ed;
+	margin: 10px 0px;
+	z-index: 9999;
+	position: fixed;
+	top: 0px;
+	font-size: 50rpx;
+	right: 570rpx;
+	border-radius: 3px;
+	width: 150rpx;
+	text-align: center;
+	color: #fff;
+}
+.shn_button {
+	background: #0aa1ed;
+	margin: 10px 0px;
+	z-index: 9999;
+	position: fixed;
+	top: 0px;
+	font-size: 50rpx;
+	left: 570rpx;
+	border-radius: 3px;
+	width: 150rpx;
+	text-align: center;
+	color: #fff;
+}
+.manual_flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	margin: 12rpx auto;
+	width: 720rpx;
+}
+.van_field_button_emp {
+	top: 300rpx;
+	position: fixed;
+	text-align: center;
+	border-radius: 4px;
+	width: 120rpx;
+	left: 450rpx;
+	font-size: 40rpx;
+}
+.van_field_button {
+	top: 360rpx;
+	position: fixed;
+	text-align: center;
+	background: #0aa1ed;
+	border-radius: 4px;
+	width: 550rpx;
+	left: 25rpx;
+}
+.manual_in_view_collapse .van-popup--center {
+	width: 600rpx;
+	height: 450rpx;
+	border-radius: 4px;
+}
+.manual_in_view_collapse .van-cell--clickable {
+	height: 90rpx;
+	background: #0aa1ed;
+}
+.manual_in_view_collapse .van-icon-arrow {
+	display: none;
+}
+.manual_in_view_collapse .van-cell--clickable .van-cell__value--alone {
+	text-align: center;
+	color: #fff;
+	font-size: 50rpx;
+}
+.manual_in_view_collapse .van-field__control {
+	height: 100px !important;
+	border: 1px solid #fffff9;
+}
+.manual_in_view_collapse .van-field__body {
+	margin-top: 50rpx;
+}
+.view_collapse {
+	height: 90rpx;
+	line-height: 90rpx;
+}
+.van_collapse_button {
+	margin-left: 550rpx;
+	margin-top: 20rpx;
+	width: 100rpx;
+	height: 60rpx;
+	border-radius: 4px;
+	background: #0aa1ed;
+	color: #fff;
+}
+.upload-btn-wrapper {
+	position: relative;
+}
+.manual_in_view_collapse {
+	width: 360rpx;
+	overflow: hidden;
+	font-size: 50rpx;
+	text-align: center;
+	background: #0aa1ed;
+	color: #fff;
+	margin-left: 6rpx;
+}
+.manual_in_view_button {
+	width: 360rpx;
+	overflow: hidden;
+	font-size: 50rpx;
+	text-align: center;
+	background: #0aa1ed;
+	color: #fff;
+	height: 90rpx;
+	line-height: 90rpx;
+	margin-right: 6rpx;
+}
+.focusState {
+	position: absolute;
+}
+.manual_in {
+	position: fixed;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f5f5f5;
+}
+.my_title_but {
+	width: 74rpx;
+	height: 74rpx;
+	line-height: 74rpx;
+	text-align: center;
+}
+.my_title_but2 {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.manual_in_view {
+	width: 720rpx;
+	overflow: hidden;
+	margin: 0 auto 16rpx;
+	background-color: #fff;
+}
+.manual_in_view_color {
+	color: #989898;
+}
+.manual_in_view_left {
+	float: left;
+	width: 58rpx;
+	height: 230rpx;
+	margin-top: 32rpx;
+	margin-left: 10rpx;
+}
+.manual_in_view_left>view {
+	width: 52rpx;
+	height: 52rpx;
+	border-radius: 50%;
+	font-size: 28rpx;
+	text-align: center;
+	line-height: 52rpx;
+	margin: 4rpx auto;
+	background-color: #fff;
+	color: #000;
+}
+.manual_in_view_left>._i {
+	display: block;
+	width: 2rpx;
+	height: 90rpx;
+	background-color: #ededed;
+	margin: auto;
+}
+.manual_in_view_left>.manual_in_view_left_view {
+	background-color: #626eee;
+	color: #fff;
+}
+.manual_in_view_right {
+	float: right;
+	width: 638rpx;
+	margin-right: 14rpx;
+	padding-bottom: 14rpx;
+}
+.manual_in_view_right_personal {
+	overflow: hidden;
+	padding-bottom: 30rpx;
+}
+.manual_in_view_right_border {
+	border-bottom: 2rpx solid #d7d7d7;
+}
+.manual_in_view_right_personal>view {
+	width: 594rpx;
+	margin: auto;
+	font-size: 24rpx;
+	color: #010101;
+	margin-top: 24rpx;
+	text-align: right;
+}
+.manual_in_view_right_personal>view>view {
+	float: left;
+}
+.manual_in_view_right_personal>view>.manual_in_view_right_personal_view {
+	width: 400rpx;
+	text-align: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	word-break: break-all;
+}
+.manual_in_view_right_information {
+	float: right;
+	width: 614rpx;
+	overflow: hidden;
+	font-size: 0;
+}
+.manual_in_view_right_information_view_input {
+	font-size: 30rpx;
+	line-height: 60rpx;
+	margin-top: 40rpx;
+	background-color: transparent;
+	width: 100%;
+	padding: 0;
+}
+.manual_in_left {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+.manual_in_right {
+	float: right;
+	width: 40%;
+}
+.manual_in_view_right_city {
+	width: 100%;
+}
+.manual_in_view_way {
+	width: 690rpx;
+	margin: auto;
+	height: 78rpx;
+	line-height: 78rpx;
+	color: #212121;
+	font-size: 30rpx;
+}
+.manual_in_view_way>input {
+	float: right;
+	text-align: right;
+}
+.manual_in_bottom {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 720rpx;
+	height: 688rpx;
+	background: #ffffff;
+	z-index: 20;
+	margin: 0 12rpx 0 12rpx;
+}
+.manual_in_bottom_title {
+	padding-left: 20rpx;
+	height: 78rpx;
+	line-height: 78rpx;
+	font-size: 24rpx;
+	color: #212121;
+}
+.manual_in_bottom_distribution {
+	width: 100%;
+	overflow-x: scroll;
+	white-space: nowrap;
+	height: 505rpx;
+	font-size: 0;
+	overflow-y: hidden;
+}
+.manual_in_bottom_distribution::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	display: none;
+}
+.manual_in_bottom_distribution_brand {
+	text-align: center;
+	width: 100%;
+	height: 18%;
+	line-height: 70rpx;
+	position: relative;
+	font-size: 24rpx;
+	list-style: none;
+	margin-right: 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+}
+.manual_in_bottom_distribution_brand_view {
+	font-size: 28rpx;
+	margin-top: 14rpx;
+	display: inline-block;
+	width: 100rpx;
+	margin-right: 100rpx;
+}
+.manual_in_bottom_distribution_brand_view>._span {
+	font-size: 38rpx;
+}
+.manual_in_bottom_distribution_brand_hook {
+	position: absolute;
+	right: 12rpx;
+	bottom: 34rpx;
+	z-index: 10;
+	width: 30rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	border-radius: 6rpx;
+}
+.manual_in_bottom_distribution_brand_hook_but {
+	background-color: #d7d7d7;
+}
+.manual_in_bottom_distribution_brand_hook>._img {
+	display: inline-block;
+	width: 22rpx;
+	height: 18rpx;
+	vertical-align: middle;
+}
+.placeOrder {
+	margin-bottom: 40rpx;
+	font-size: 30rpx;
+}
+.manual_in_bottom_distribution1 {
+	border-color: #bf73de;
+	color: #bf73de;
+}
+.manual_in_bottom_distribution1_back {
+	background-color: #bf73de;
+}
+

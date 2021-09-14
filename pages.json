@@ -121,6 +121,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/registered/registered",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "忘记密码",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"tabBar": {
 		"color": "#282828",
@@ -203,7 +212,7 @@
 			// "van-toast": "/wxcomponents/vant/toast/index",
 			"van-transition": "/wxcomponents/vant/transition/index",
 			// "van-tree-select": "/wxcomponents/vant/tree-select/index",
-			// "van-datetime-picker": "/wxcomponents/vant/datetime-picker/index",
+			"van-datetime-picker": "/wxcomponents/vant/datetime-picker/index",
 			// "van-rate": "/wxcomponents/vant/rate/index",
 			"van-collapse": "/wxcomponents/vant/collapse/index",
 			"van-collapse-item": "/wxcomponents/vant/collapse-item/index",

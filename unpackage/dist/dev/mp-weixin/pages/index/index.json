@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "今日全部渠道",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-calendar": "/uni_modules/uni-calendar/components/uni-calendar/uni-calendar",
+    "mescroll-body": "/uni_modules/mescroll-uni/components/mescroll-body/mescroll-body"
+  }
+}

@@ -1,0 +1,229 @@
+.time_list1.data-v-287e9e88 .van-tab--active {
+  background-color: #5563ed !important;
+  color: #fff !important;
+}
+
+
+.time_list_calendar_div {
+	background-color: #5563ed;
+	color: #fff;
+}
+.appmy1 {
+	height: 100vh;
+	background-color: #f5f5f5;
+	margin-bottom: 100rpx;
+}
+.order_list1 {
+	overflow: scroll;
+}
+.my_title {
+	width: 100%;
+	height: 74rpx;
+	line-height: 74rpx;
+	font-size: 36rpx;
+	text-align: center;
+	position: relative;
+	background-color: #ededed;
+}
+.time_list1 {
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	background-color: #fff;
+	position: relative;
+}
+.time_list {
+	width: calc(100% - 80rpx);
+	height: 80rpx;
+	line-height: 80rpx;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	list-style-type: none;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.time_list::-webkit-scrollbar {
+	display: none;
+}
+.time_list_calendar {
+	padding: 0;
+	width: 80rpx;
+	height: 80rpx;
+	margin: 0 20rpx;
+}
+.time_list_calendar_view1 {
+	width: 56rpx;
+	height: 56rpx;
+	line-height: 60rpx;
+	text-align: center;
+	border-radius: 56rpx;
+	color: #000000;
+	font-size: 30rpx;
+}
+.time_list_calendar_view {
+	background-color: #5563ed !important;
+	color: #fff !important;
+}
+.calendar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	z-index: 10;
+	background-color: #fff;
+}
+.calendar_icon {
+	vertical-align: middle;
+	font-size: 44rpx;
+	width: 30rpx;
+	height: 30rpx;
+	margin-top: -14rpx;
+}
+.todayFinancial {
+	margin-top: 12rpx;
+	height: 120rpx;
+	font-size: 0;
+	background-color: #fff;
+}
+.todayFinancial>view {
+	display: inline-block;
+	/* vertical-align: revert; */
+	vertical-align: middle;
+	overflow: hidden;
+}
+.todayFinancial_img {
+	width: 74rpx;
+	height: 80rpx;
+	vertical-align: middle;
+	margin-left: 44rpx;
+	vertical-align: middle;
+}
+.todayFinancial>view:nth-child(2) {
+	width: 22%;
+	line-height: initial;
+	text-align: center;
+	/* margin-top: 0.1rpx; */
+	margin-right: 30rpx;
+	margin-bottom: 10rpx;
+}
+.todayFinancial_view {
+	font-size: 26rpx;
+	line-height: 40rpx;
+	color: #898989;
+	display: inline-block;
+	width: 100%;
+	vertical-align: middle;
+}
+.todayFinancial_tit {
+	font-size: 24rpx;
+}
+.todayFinancial_money {
+	font-size: 40rpx;
+}
+.todayFinancial>view:nth-child(3) {
+	margin-top: 14rpx;
+}
+.todayFinancial>view:nth-child(4) {
+	margin-right: 50rpx;
+	float: right;
+	margin-top: 14rpx;
+}
+.brandType {
+	overflow: hidden;
+	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+.brandType>view {
+	float: left;
+	width: 142rpx;
+	height: 48rpx;
+	line-height: 48rpx;
+	background: #ffffff;
+	margin: 12rpx 10rpx 12rpx 0;
+	font-size: 28rpx;
+	color: #595959;
+	text-align: center;
+}
+.brandType>view:nth-child(5n) {
+	margin-right: 0;
+}
+.brandType>.brandType_view {
+	background-color: #5563ed;
+	color: #fff;
+}
+.order_list {
+	height: 94rpx;
+	font-size: 0;
+	border-bottom: 8rpx solid #f5f5f5;
+	background-color: #fff;
+}
+.order_list>view {
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+	width: 10%;
+	height: 100%;
+	background-color: ;
+}
+.order_list>view:nth-child(1) {
+	width: 15%;
+	font-size: 32rpx;
+	line-height: 94rpx;
+}
+.order_list_title {
+	vertical-align: middle;
+	margin-left: 30rpx;
+}
+.order_list>view:nth-child(2) {
+	width: 15%;
+	text-align: left;
+}
+.order_list_time {
+	font-size: 26rpx;
+	color: #595959;
+	line-height: 32rpx;
+	margin-top: 14rpx;
+}
+.order_list_middle_img {
+	width: 26rpx;
+	height: 26rpx;
+	margin-top: 6rpx;
+}
+.order_list>view:nth-child(3) {
+	width: 28%;
+	text-align: right;
+	margin-right: 5%;
+}
+.order_list_num {
+	font-size: 20rpx;
+	color: #595959;
+	margin-top: 20rpx;
+}
+.order_list>view:nth-child(4) {
+	width: 37%;
+	text-align: left;
+}
+.order_list_money {
+	font-size: 26rpx;
+	color: #595959;
+	line-height: 38rpx;
+}
+.order_list_money1 {
+	color: #000000;
+}
+.order_list_money:nth-child(1) {
+	margin-top: 10rpx;
+}
+

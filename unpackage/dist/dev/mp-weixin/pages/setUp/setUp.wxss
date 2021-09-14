@@ -1,0 +1,42 @@
+
+.mar_bot.data-v-faec897c {
+	margin-bottom: 20rpx;
+}
+.setUp.data-v-faec897c {
+	position: fixed;
+	left: 0;
+	padding-top: 20rpx;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	background-color: #f3f5f7;
+	overflow: hidden;
+}
+.my_title_but.data-v-faec897c {
+	width: 0.74rem;
+	height: 0.74rem;
+	line-height: 0.74rem;
+	text-align: center;
+}
+.my_title_but2.data-v-faec897c {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.setUpList.data-v-faec897c {
+	margin-top: 0.2rem;
+	font-size: 0.28rem;
+	color: #595959;
+}
+.exit.data-v-faec897c {
+	width: 6.94rem;
+	height: 0.72rem;
+	position: fixed;
+	bottom: 10%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 100;
+	border-radius: 0;
+}
+

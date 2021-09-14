@@ -79,7 +79,7 @@
       </div>
     </div>
 
-    <van-popup v-model="showPicker" position="bottom">
+    <van-popup :show="showPicker" position="bottom">
       <van-datetime-picker
         type="time"
         @confirm="onConfirm"
@@ -246,7 +246,12 @@ export default {
       var n = this.list[i].timeList.length;
       this.list[i].type = true;
       if (this.list[i].timeList[n - 1].startTime == "00:00") {
-        this.$toast("已新增");
+        uni.showToast({
+        	icon: "none",
+        	title: '已新增',
+        	duration: 3000,
+        	position: 'top'
+        })
       } else {
         this.list[i].timeList.push({ startTime: "00:00", endTime: "00:00" });
       }
@@ -267,14 +272,15 @@ export default {
       }
     },
     onConfirm(time) {
+		console.log(time)
       if (this.timeIndex.type == 0) {
         this.list[this.timeIndex.index].timeList[
           this.timeIndex.i
-        ].startTime = time;
+        ].startTime = time.detail;
       } else {
         this.list[this.timeIndex.index].timeList[
           this.timeIndex.i
-        ].endTime = time;
+        ].endTime = time.detail;
       }
       this.list[this.timeIndex.index].type = true;
       this.showPicker = false;
@@ -292,7 +298,7 @@ export default {
           endTime += data.timeList[i].endTime + ",";
         }
       }
-      uni.reaurst({
+      uni.request({
           method: "post",
           url: that.$axiosw.interface + that.$axiosw.data[44].interface,
           data: {
@@ -321,7 +327,7 @@ export default {
           if (e.data.status == 0) {
             uni.showToast({
             	icon: "success",
-            	title: res.data.msg,
+            	title:'修改成功',
             	duration: 3000,
             	position: 'top'
             })
@@ -329,7 +335,7 @@ export default {
           } else {
             uni.showToast({
             	icon: "none",
-            	title: res.data.msg,
+            	title: e.data.msg,
             	duration: 3000,
             	position: 'top'
             })

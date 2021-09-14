@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "财务",
+  "usingComponents": {
+    "uni-calendar": "/uni_modules/uni-calendar/components/uni-calendar/uni-calendar",
+    "mescroll-body": "/uni_modules/mescroll-uni/components/mescroll-body/mescroll-body"
+  }
+}

@@ -14,7 +14,7 @@
           <div class="order_information_list">下单时间：{{list.orderInfo.createTime}}</div>
           <div class="order_information_list">送达时间：{{list.orderInfo.userSendTime}}</div>
           <div class="order_information_list">订单编号：{{list.orderInfo.orderId}}</div>
-          <div class="order_information_list">备注：{{list.orderInfo.rpxark}}</div>
+          <div class="order_information_list">备注：{{list.orderInfo.remark}}</div>
         </div>
       </div>
       <div class="order">

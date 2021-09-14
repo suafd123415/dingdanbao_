@@ -48,7 +48,7 @@
 				<view class="manual_in_view_right_information manual_in_view_right_border">
 					<view>
 						<view @click="choose" class="manual_in_view_right_city">
-							<input readonly="readonly" class="manual_in_view_right_information_view_input"
+							<input readonly="readonly" class="manual_in_view_right_information_view_input" disabled
 								placeholder="城市/区域" v-model="information.city.city + information.city.area" />
 						</view>
 					</view>
@@ -64,8 +64,8 @@
 				</view>
 			</view>
 		</view>
-		<camera device-position="back" flash="off" style="width: 100%; height: 300px;"></camera>
-		<button type="primary" @click="takePhoto()">拍照</button>
+		<!-- <camera device-position="back" flash="off" style="width: 100%; height: 300px;"></camera> -->
+		<!-- <button type="primary" @click="takePhoto()">拍照</button> -->
 		<view class="manual_in_view">
 			<view class="manual_in_view_way">
 				重量(kg):

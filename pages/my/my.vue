@@ -5,8 +5,8 @@
 				<van-button color="#EDEDED" class="my_title_but my_title_but1" @click="setUp">
 					<img class="my_title_but_img" src="../../static/image/icon_setUp.png" />
 				</van-button>
+			<text>我的</text>
 			</view>
-			我的
 		</view>
 		<view class="amount">
 			<button round type="default" class="amount_but" @click="topUap">充值</button>
@@ -52,13 +52,13 @@
 					<van-icon class="my_bottom_right_img" name="arrow" />
 				</view>
 			</view>
-			<view class="my_bottom_list" @click="binding()">
+			<!-- <view class="my_bottom_list" @click="binding()">
 				<img class="my_bottom_list_img" src="../../static/image/icon_receipts.png" />
 				<span>绑定账号</span>
 				<view class="my_bottom_right">
 					<van-icon class="my_bottom_right_img" name="arrow" />
 				</view>
-			</view>
+			</view> -->
 		</view>
 		<view class="manual">
 			<view class="my_bottom_list" @click="manual()">
@@ -95,7 +95,7 @@
 		},
 		onLoad() {
 			//#ifdef MP
-			this.top = 80
+			this.top = 60
 			//#endif
 			console.log(wx.openLocation)
 			var _this = this;
