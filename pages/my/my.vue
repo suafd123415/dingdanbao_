@@ -107,10 +107,13 @@
 				}
 			})
 		},
-		mounted() {
+		onShow() {
 			if (this.show == false) {
 				this.detection();
 			}
+			
+		},
+		mounted() {
 		},
 		methods: {
 			manual() {

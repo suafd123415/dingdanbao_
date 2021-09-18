@@ -4,7 +4,7 @@
   "interface": "http://101.201.147.68:8080",
   "interface4": "http://txjt.cn1.utools.club",
   "interface5": "http://82.157.97.185:8080",
-  "interface6": "http://shoptxj.cn.utools.club",
+  "interface6": "https://ofp64ew07tw3.ngrok2.xiaomiqiu.cn",
   "interface7": "http://173.100.1.109:8080",
   "data": [
     {
@@ -281,6 +281,16 @@
       "interface": "/shop/app/bill/queryPayInfo",
       "name": "充值记录",
       "subscript": 54
-    }
+    },
+	{
+	  "interface": "/shop/app/getOpenId",
+	  "name": "获取openID",
+	  "subscript": 55
+	},
+	{
+		"interface": "/shop/app/pay/minPrePay",
+		"name": "充值",
+		"subscript": 56
+	}
   ]
 }

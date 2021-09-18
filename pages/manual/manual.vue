@@ -356,6 +356,14 @@
 						position: 'top'
 					})
 					return false
+				}else if(that.address_value==''){
+					uni.showToast({
+						icon: "none",
+						title: '请输入详细地址',
+						duration: 3000,
+						position: 'top'
+					})
+					return false
 				}
 				that.$utile.throttle(
 					function() {

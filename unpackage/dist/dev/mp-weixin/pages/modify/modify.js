@@ -97,20 +97,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var m0 =
+    _vm.type == 1 && _vm.type1 == false
+      ? __webpack_require__(/*! ../../static/image/eyes1.png */ 105)
+      : null
+  var m1 =
+    _vm.type == 1 && !(_vm.type1 == false)
+      ? __webpack_require__(/*! ../../static/image/eyes2.png */ 106)
+      : null
   var l0 =
     _vm.type == 1
       ? _vm.__map(_vm.val, function(item, i) {
           var $orig = _vm.__get_orig(item)
 
-          var m0 =
+          var m2 =
             item.type == false ? __webpack_require__(/*! ../../static/image/eyes1.png */ 105) : null
-          var m1 = !(item.type == false)
+          var m3 = !(item.type == false)
             ? __webpack_require__(/*! ../../static/image/eyes2.png */ 106)
             : null
           return {
             $orig: $orig,
-            m0: m0,
-            m1: m1
+            m2: m2,
+            m3: m3
           }
         })
       : null
@@ -118,6 +126,8 @@ var render = function() {
     {},
     {
       $root: {
+        m0: m0,
+        m1: m1,
         l0: l0
       }
     }
@@ -220,46 +230,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   name: "setUp",
@@ -268,9 +238,9 @@ var _default =
       id: "",
       token: "",
       name: "",
+      value: '', //原始密码
       type: 1,
-      val: [
-      {
+      val: [{
         value: "",
         type: false,
         name: "密码" },
@@ -287,15 +257,24 @@ var _default =
         verCode: "" },
 
       code: "获取验证码",
-      btnDisabled: false };
+      btnDisabled: false,
+      type1: false };
+
+  },
+  onLoad: function onLoad(option) {
+    var that = this;
+    console.log(option);
+    that.name = option.title;
+    that.type = option.type;
+    uni.setNavigationBarTitle({
+      title: that.name });
 
   },
   mounted: function mounted() {
     var that = this;
     that.id = JSON.parse(uni.getStorageSync("id"));
     that.token = JSON.parse(uni.getStorageSync("token"));
-    that.name = that.$route.query.title;
-    that.type = that.$route.query.type;
+
   },
   methods: {
     back: function back() {
@@ -303,6 +282,9 @@ var _default =
     },
     sWitch: function sWitch(i) {
       this.val[i].type = !this.val[i].type;
+    },
+    sWitch1: function sWitch1() {
+      this.type1 = !this.type1;
     },
     codeClick: function codeClick() {
       if (this.btnDisabled) {
@@ -362,12 +344,41 @@ var _default =
     },
     changePassword: function changePassword() {
       var that = this;
-      if (that.val[0].value.length == "") {
-        that.$toast("密码为空");
+      if (that.value == '') {
+        uni.showToast({
+          icon: "none",
+          title: '旧密码不能为空',
+          duration: 3000,
+          position: 'top' });
+
+      } else if (that.val[0].value.length == "") {
+        uni.showToast({
+          icon: "none",
+          title: '新密码不能为空',
+          duration: 3000,
+          position: 'top' });
+
       } else if (that.val[1].value.length == "") {
-        that.$toast("二次密码为空");
+        uni.showToast({
+          icon: "none",
+          title: '确认密码不能为空',
+          duration: 3000,
+          position: 'top' });
+
       } else if (that.val[0].value != that.val[1].value) {
-        that.$toast("输入密码不一致");
+        uni.showToast({
+          icon: "none",
+          title: '两次输入的密码不一致',
+          duration: 3000,
+          position: 'top' });
+
+      } else if (!/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/.test(that.val[0].value)) {
+        uni.showToast({
+          icon: "none",
+          title: '新密码太简单，请设置数字和字母组合密码',
+          duration: 3000,
+          position: 'top' });
+
       } else {
         that.changePasswordin();
       }
@@ -379,8 +390,8 @@ var _default =
         url: that.$axiosw.interface + that.$axiosw.data[41].interface,
         data: {
           shopId: that.id,
-          passWord: that.val[0].value,
-          enterPassWord: that.val[1].value },
+          formerPassword: that.value,
+          newPassword: that.val[0].value },
 
         transformRequest: [
         function (data) {
@@ -396,6 +407,7 @@ var _default =
 
       then(function (res) {
         var e = that.interactionDetection(res[1]);
+        console.log(e.data.status);
         if (e.data.status == 0) {
           uni.showToast({
             icon: "success",
@@ -404,12 +416,12 @@ var _default =
             position: 'top' });
 
           setTimeout(function () {
-            that.$router.go(-1); //返回上一层
+            uni.navigateBack();
           }, 500);
         } else {
           uni.showToast({
             icon: "none",
-            title: e.data.msg,
+            title: '修改失败，请检查原始密码',
             duration: 3000,
             position: 'top' });
 
@@ -422,12 +434,21 @@ var _default =
       that.phoneval.userPhone.length != 11 &&
       !/^1[3456789]\d{9}$/.test(that.phoneval.userPhone))
       {
-        that.$toast("电话不对");
+        uni.showToast({
+          icon: "none",
+          title: '输入的手机号不正确',
+          duration: 3000,
+          position: 'top' });
+
       } else if (that.phoneval.verCode.length == 0) {
-        that.$toast("未输入验证码");
+        uni.showToast({
+          icon: "none",
+          title: '未输入验证码',
+          duration: 3000,
+          position: 'top' });
+
       } else {
-        that.
-        $axios({
+        uni.request({
           method: "post",
           url: that.$axiosw.interface + that.$axiosw.data[40].interface,
           data: {
@@ -442,20 +463,30 @@ var _default =
             return ret;
           }],
 
-          headers: {
+          header: {
             Authorization: that.token,
             "Content-Type": "application/x-www-form-urlencoded" } }).
 
 
         then(function (res) {
-          var e = that.interactionDetection(res);
+          var e = that.interactionDetection(res[1]);
           if (e.data.status == 0) {
-            that.$toast("修改成功");
+            uni.showToast({
+              icon: "success",
+              title: '修改成功',
+              duration: 3000,
+              position: 'top' });
+
             setTimeout(function () {
-              that.$router.go(-1); //返回上一层
+              uni.navigateBack();
             }, 500);
           } else {
-            that.$toast(e.data.msg);
+            uni.showToast({
+              icon: "none",
+              title: e.data.msg,
+              duration: 3000,
+              position: 'top' });
+
           }
         }).
         catch(function (error) {
@@ -476,7 +507,12 @@ var _default =
 
         }, 500);
       } else {
-        that.$toast(res.data.msg);
+        uni.showToast({
+          icon: "none",
+          title: res.data.msg,
+          duration: 3000,
+          position: 'top' });
+
         return res;
       }
     } } };exports.default = _default;

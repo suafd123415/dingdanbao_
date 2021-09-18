@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -14,6 +15,24 @@
         {
           "name": "pages/businessCenter/businessCenter",
           "pathName": "pages/businessCenter/businessCenter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/modify/modify",
+          "pathName": "pages/modify/modify",
+          "query": "title=%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81&type=1",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/payList/payList",
+          "pathName": "pages/payList/payList",
           "query": "",
           "scene": null
         }

@@ -416,9 +416,12 @@ var _default = { name: "app", mixins: [_mescrollMixins.default], // 使用mixin
   data: function data() {return { mescroll: null, // mescroll实例对象 (此行可删,mixins已默认)
       // 上拉加载的配置(可选, 绝大部分情况无需配置)
       downOption: { use: false }, upOption: { page: { size: 15, num: -1 }, textNoMore: '没有更多了', noMoreSize: 5, // 配置列表的总数量要大于等于5条才显示'-- END --'的提示
-        empty: { tip: '暂无相关数据' } }, dataList: [], time: '', Time: '', id: "", token: "", brandType: [{ name: "全部", type: true, num: 10000 }, { name: "天鲜郡", type: false, num: 10 }, { name: "美团", type: false, num: 1 }, { name: "饿了么", type: false, num: 2 }, { name: "京东到家", type: false, num: 3 }], orderType: "all", listType: { shopFee: "0", clearingFee: "0", shopAccountCount: "0", checkOwn: "" }, list: [], list1: 0, list2: 0, orderCount: 0, active: "", show: false, minDate: new Date(2018, 0, 1), loading: false, finished: false, page: 0, day1: 0, day2: 0, calendarListItem: 0 };}, mounted: function mounted() {}, beforeMount: function beforeMount() {this.beforeDestroy();}, methods: { /*上拉加载的回调*/upCallback: function upCallback(page) {var _this = this;console.log(page);var that = this;var pageNum = page.size; // 页码, 默认从1开始
+        empty: { tip: '暂无相关数据' } }, dataList: [], time: '', Time: '', id: "", token: "", brandType: [{ name: "全部", type: true, num: 10000 }, { name: "天鲜郡", type: false, num: 10 }, { name: "美团", type: false, num: 1 }, { name: "饿了么", type: false, num: 2 }, { name: "京东到家", type: false, num: 3 }], orderType: "all", listType: { shopFee: "0", clearingFee: "0", shopAccountCount: "0", checkOwn: "" }, list: [], list1: 0, list2: 0, orderCount: 0, active: "", show: false, minDate: new Date(2018, 0, 1), loading: false, finished: false, page: 0, day1: 0, day2: 0, calendarListItem: 0 };}, mounted: function mounted() {}, beforeMount: function beforeMount() {}, onShow: function onShow() {this.beforeDestroy();}, methods: { /*上拉加载的回调*/upCallback: function upCallback(page) {var _this = this;console.log(page);var that = this;var pageNum = page.size; // 页码, 默认从1开始
       var pageSize = page.num; // 页长, 默认每页10条
-      uni.request({ method: "post", url: that.$axiosw.interface + that.$axiosw.data[38].interface, data: { shopId: that.id, time: that.Time, num: pageNum, page: pageSize }, transformRequest: [function (data) {var ret = "";
+      uni.request({ method: "post", url: that.$axiosw.interface + that.$axiosw.data[38].interface, data: { shopId: that.id, time: that.Time, num: pageNum, page: pageSize },
+        transformRequest: [
+        function (data) {
+          var ret = "";
           ret = that.$qs.stringify(data);
           return ret;
         }],

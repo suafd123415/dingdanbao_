@@ -49,7 +49,7 @@
 		}, {
 			"path": "pages/modify/modify",
 			"style": {
-				"navigationBarTitleText": "修改密码",
+				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
 
@@ -146,7 +146,7 @@
 				"text": "商品",
 				"pagePath": "pages/message/message",
 				"iconPath": "static/image/icon_bottom_shop.png",
-				"selectedIconPath": "static/image/icon_bottom_shop.png"
+				"selectedIconPath": "static/image/icon_bottom_shop1.png"
 			},
 			{
 				"text": "财务",

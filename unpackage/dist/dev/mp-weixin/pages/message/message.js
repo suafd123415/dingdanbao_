@@ -455,32 +455,39 @@ var _default = { mixins: [_mescrollMixins.default], // 使用mixin
       detail: 1, // /////////////////////////
       mescroll: null, // mescroll实例对象 (此行可删,mixins已默认)
       // 上拉加载的配置(可选, 绝大部分情况无需配置)
-      downOption: { use: false }, dataList: [] };}, onLoad: function onLoad() {var that = this;this.top = 0;that.id = JSON.parse(uni.getStorageSync("id"));that.token = JSON.parse(uni.getStorageSync("id"));this.into();}, methods: { onChange: function onChange(event) {var that = this;console.log(event);if (event.detail != '') {this.detail = event.detail;that.ida = that.shop[event.detail - 1].id;that.mescroll.resetUpScroll();}this.activeName = event.detail;}, into: function into() {var that = this;that.id = JSON.parse(uni.getStorageSync("id"));that.token = JSON.parse(uni.getStorageSync("token"));uni.request({ method: "post", url: that.$axiosw.interface + that.$axiosw.data[25].interface, data: { shopId: that.id }, transformRequest: [function (data) {var ret = "";ret = that.$qs.stringify(data);return ret;}], header: { Authorization: that.token, "Content-Type": "application/x-www-form-urlencoded" } }).then(function (res) {var e = that.interactionDetection(res[1]);if (e.data.status == 0) {e.data.data.categoryOneDtos[that.oneTypeindex].type = true;that.shop = e.data.data.categoryOneDtos;that.ida = e.data.data.categoryOneDtos[that.oneTypeindex].id;}});}, onshopClick: function onshopClick(e, d) {var that = this;console.log(e, d);var shop = that.shop;for (var i = 0; i < shop.length; i++) {if (i == d) {shop[d].type = true;} else {shop[i].type = false;}}that.pageNumber = 0;if (that.shop[d].id != that.selected) {that.selected = that.shop[d].id;that.goodsListRequest(that.shop[d].id);}}, goodsListRequest: function goodsListRequest(id, selectedType) {}, mescrollInit: function mescrollInit(mescroll) {this.mescroll = mescroll;}, /*下拉刷新的回调, 有3种处理方式:*/downCallback: function downCallback() {// 第3种: 下拉刷新什么也不处理, 可直接调用或者延时一会调用 mescroll.endSuccess() 结束即可
+      downOption: { use: false }, dataList: [] };}, onLoad: function onLoad() {var that = this;this.top = 0;that.id = JSON.parse(uni.getStorageSync("id"));that.token = JSON.parse(uni.getStorageSync("id"));}, onShow: function onShow() {this.into();}, methods: { onChange: function onChange(event) {var that = this;console.log(event);if (event.detail != '') {this.detail = event.detail;that.ida = that.shop[event.detail - 1].id;that.mescroll.resetUpScroll();}this.activeName = event.detail;}, into: function into() {var that = this;that.id = JSON.parse(uni.getStorageSync("id"));that.token = JSON.parse(uni.getStorageSync("token"));uni.request({ method: "post", url: that.$axiosw.interface + that.$axiosw.data[25].interface, data: { shopId: that.id }, transformRequest: [function (data) {var ret = "";ret = that.$qs.stringify(data);return ret;}], header: { Authorization: that.token, "Content-Type": "application/x-www-form-urlencoded" } }).then(function (res) {var e = that.interactionDetection(res[1]);if (e.data.status == 0) {that.shop = e.data.data.categoryOneDtos;e.data.data.categoryOneDtos[that.oneTypeindex].type = true;console.log(that.shop.length, 240);that.ida = e.data.data.categoryOneDtos[that.oneTypeindex].id;}});}, onshopClick: function onshopClick(e, d) {var that = this;console.log(e, d);var shop = that.shop;for (var i = 0; i < shop.length; i++) {if (i == d) {shop[d].type = true;} else {shop[i].type = false;}}that.pageNumber = 0;if (that.shop[d].id != that.selected) {that.selected = that.shop[d].id;that.goodsListRequest(that.shop[d].id);}}, goodsListRequest: function goodsListRequest(id, selectedType) {}, mescrollInit: function mescrollInit(mescroll) {this.mescroll = mescroll;}, /*下拉刷新的回调, 有3种处理方式:*/downCallback: function downCallback() {// 第3种: 下拉刷新什么也不处理, 可直接调用或者延时一会调用 mescroll.endSuccess() 结束即可
       this.mescroll.endSuccess();}, /*上拉加载的回调*/upCallback: function upCallback(page) {var _this = this;var that = this;console.log(that.mescroll.optUp);console.log(page);setTimeout(function () {var pageNum = page.size; // 页码, 默认从1开始
         var pageSize = page.num; // 页长, 默认每页10条
-        uni.request({ method: "post", url: that.$axiosw.interface + that.$axiosw.data[26].interface, data: { shopId: that.id, num: pageNum, pageNumber: pageSize, categoryId: that.ida }, transformRequest: [function (data) {var ret = "";ret = that.$qs.stringify(data);return ret;}], header: { Authorization: that.token, "Content-Type": "application/x-www-form-urlencoded" }, success: function success(data) {
+        uni.request({ method: "post", url: that.$axiosw.interface + that.$axiosw.data[26].interface, data: { shopId: that.id, num: pageNum, pageNumber: pageSize, categoryId: that.ida }, transformRequest: [function (data) {var ret = "";ret = that.$qs.stringify(data);return ret;}], header: {
+            Authorization: that.token,
+            "Content-Type": "application/x-www-form-urlencoded" },
+
+          success: function success(data) {
             console.log(data.data);
-            // 接口返回的当前页数据列表 (数组)
-            var curPageData = data.data;
-            // // 接口返回的当前页数据长度 (如列表有26个数据,当前页返回8个,则curPageLen=8)
-            var cou = 0;
-            for (var i = 0; i < curPageData.data.goodsList.length; i++) {
-              cou += curPageData.data.goodsList[i].categoryNum;
+            if (data.data.status == 0) {
+
+              // 接口返回的当前页数据列表 (数组)
+              var curPageData = data.data;
+              // // 接口返回的当前页数据长度 (如列表有26个数据,当前页返回8个,则curPageLen=8)
+              var cou = 0;
+              for (var i = 0; i < curPageData.data.goodsList.length; i++) {
+                cou += curPageData.data.goodsList[i].categoryNum;
+              }
+              console.log(cou);
+              var curPageLen = cou.toString();
+              // // 接口返回的总数据量(如列表有26个数据,每页10条,共3页; 则totalSize=26)
+              var totalSize = curPageData.data.count;
+              //设置列表数据
+              if (page.num == 0) _this.dataList = []; //如果是第一页需手动置空列表
+              console.log(data.data.data.goodsList);
+              _this.dataList = _this.dataList.concat(data.data.data.goodsList); //追加新数据
+              console.log(_this.dataList);
+              //方法二(推荐): 后台接口有返回列表的总数据量 totalSize
+              _this.mescroll.endBySize(curPageLen, totalSize);
+              setTimeout(function () {
+                _this.mescroll.endSuccess(curPageLen);
+              }, 20);
             }
-            console.log(cou);
-            var curPageLen = cou.toString();
-            // // 接口返回的总数据量(如列表有26个数据,每页10条,共3页; 则totalSize=26)
-            var totalSize = curPageData.data.count;
-            //设置列表数据
-            if (page.num == 0) _this.dataList = []; //如果是第一页需手动置空列表
-            console.log(data.data.data.goodsList);
-            _this.dataList = _this.dataList.concat(data.data.data.goodsList); //追加新数据
-            console.log(_this.dataList);
-            //方法二(推荐): 后台接口有返回列表的总数据量 totalSize
-            _this.mescroll.endBySize(curPageLen, totalSize);
-            setTimeout(function () {
-              _this.mescroll.endSuccess(curPageLen);
-            }, 20);
           },
           fail: function fail() {
             //  请求失败,隐藏加载状态

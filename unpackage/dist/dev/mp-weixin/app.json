@@ -41,7 +41,7 @@
         "text": "商品",
         "pagePath": "pages/message/message",
         "iconPath": "static/image/icon_bottom_shop.png",
-        "selectedIconPath": "static/image/icon_bottom_shop.png"
+        "selectedIconPath": "static/image/icon_bottom_shop1.png"
       },
       {
         "text": "财务",
@@ -88,6 +88,5 @@
     "van-collapse-item": "/wxcomponents/vant/collapse-item/index",
     "van-picker": "/wxcomponents/vant/picker/index",
     "van-overlay": "/wxcomponents/vant/overlay/index"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

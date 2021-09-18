@@ -194,7 +194,10 @@
 			//#endif
 			that.id = JSON.parse(uni.getStorageSync("id"));
 			that.token = JSON.parse(uni.getStorageSync("id"));
+		},
+		onShow() {
 			this.into();
+			
 		},
 		methods: {
 			onChange(event) {
@@ -232,8 +235,9 @@
 					.then(function(res) {
 						var e = that.interactionDetection(res[1]);
 						if (e.data.status == 0) {
-							e.data.data.categoryOneDtos[that.oneTypeindex].type = true;
 							that.shop = e.data.data.categoryOneDtos;
+							e.data.data.categoryOneDtos[that.oneTypeindex].type = true;
+							console.log(that.shop.length,240)
 							that.ida=e.data.data.categoryOneDtos[that.oneTypeindex].id
 							
 							
@@ -298,6 +302,8 @@
 					},
 					success: (data) => {
 						console.log(data.data)
+						if(data.data.status==0){
+							
 						// 接口返回的当前页数据列表 (数组)
 						let curPageData = data.data;
 						// // 接口返回的当前页数据长度 (如列表有26个数据,当前页返回8个,则curPageLen=8)
@@ -319,6 +325,7 @@
 						setTimeout(() => {
 							this.mescroll.endSuccess(curPageLen)
 						}, 20)
+						}
 					},
 					fail: () => {
 						//  请求失败,隐藏加载状态

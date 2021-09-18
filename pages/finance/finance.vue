@@ -167,7 +167,10 @@
 		},
 		mounted() {},
 		beforeMount() {
+		},
+		onShow() {
 			this.beforeDestroy();
+			
 		},
 		methods: {
 			/*上拉加载的回调*/

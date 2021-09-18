@@ -1,5 +1,5 @@
 <template>
-  <div  style="background: #f2f2f2;height: 100vh;" class="financialDetails">
+  <div style="background: #f2f2f2;height: 100vh;" class="financialDetails">
     <div class="my_title"  :style="{height:height+50+'px'}">
 		<div  :style="{paddingTop:top+'rpx'}" style="z-index: 999;padding-left: 15rpx;">#{{list.orderInfo.dayCode}}
       <van-button :style="{paddingTop:top+'rpx'}" style="z-index: 999;padding-left: 15rpx;" color="#EDEDED" class="my_title_but my_title_but2" @click="back()">

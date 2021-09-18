@@ -176,19 +176,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   name: "app",
@@ -253,10 +240,11 @@ var _default =
         that.type = true;
         uni.request({
           method: "post",
-          url: 'https://wxmin.tianxianjun.com/pay/prePayOrder',
+          url: that.$axiosw.interface + that.$axiosw.data[56].interface,
           data: {
             shopId: that.id,
-            type: that.stateNum },
+            type: that.stateNum,
+            openId: uni.getStorageSync("open_id") },
 
           transformRequest: [
           function (data) {
@@ -271,6 +259,7 @@ var _default =
 
 
         then(function (res) {
+          console.log(res[1].data);
           var e = that.interactionDetection(res[1]);
           if (e.data.status == 0) {
             that.type = false;
@@ -286,10 +275,33 @@ var _default =
               signType: 'MD5',
               paySign: eq.paySign,
               success: function success(res) {
-                console.log(res);
+                console.log(res, '成功');
+                setTimeout(function () {
+                  uni.showToast({
+                    icon: "success",
+                    title: '支付成功',
+                    duration: 3000,
+                    position: 'top' });
+
+
+                }, 200);
+                setTimeout(function () {
+                  uni.switchTab({
+                    url: '../my/my' });
+
+                }, 1000);
               },
               fail: function fail(res) {
-                console.log(res);
+                console.log(res, '失败');
+                setTimeout(function () {
+
+                  uni.showToast({
+                    icon: "none",
+                    title: '支付失败',
+                    duration: 3000,
+                    position: 'top' });
+
+                }, 200);
               } });
 
             // location.href=e.data.data.mweb_url +"&redirect_url=" +encodeURIComponent(redirect_url),"_search"
@@ -309,8 +321,8 @@ var _default =
     },
     butdel: function butdel() {
       uni.setStorageSync("index", 3);
-      this.$router.push({
-        path: "/" });
+      uni.switchTab({
+        url: '../my/my' });
 
     },
     interactionDetection: function interactionDetection(res) {
@@ -333,15 +345,6 @@ var _default =
 
   mounted: function mounted() {
     this.into();
-    wx.requestPayment({
-      timeStamp: '',
-      nonceStr: '',
-      package: '',
-      signType: 'MD5',
-      paySign: '',
-      success: function success(res) {},
-      fail: function fail(res) {} });
-
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

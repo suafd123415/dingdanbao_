@@ -185,56 +185,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   name: "app",
@@ -276,22 +226,28 @@ var _default =
 
         }
         if (that.type == false) {
-          if (that.val.passWord.length == 6) {
+          if (that.val.passWord.length >= 6) {
             that.denlu();
           } else if (that.val.passWord.length < 6) {
-            that.$notify({
-              type: "danger",
-              message: "密码数量不够" });
+            uni.showToast({
+              icon: "none",
+              title: '密码数量不够',
+              duration: 3000,
+              position: 'top' });
 
           } else if (!reg.test(that.val.passWord)) {
-            that.$notify({
-              type: "danger",
-              message: "密码只能输入英文和数字" });
+            uni.showToast({
+              icon: "none",
+              title: '密码只能输入英文和中文',
+              duration: 3000,
+              position: 'top' });
 
           } else {
-            that.$notify({
-              type: "danger",
-              message: "密码不能为空" });
+            uni.showToast({
+              icon: "none",
+              title: '密码不能为空',
+              duration: 3000,
+              position: 'top' });
 
           }
         } else {
@@ -312,6 +268,47 @@ var _default =
     },
     denlu: function denlu() {
       var that = this;
+      uni.getProvider({
+        service: 'oauth',
+        success: function success(res) {
+          if (res.provider.includes('weixin')) {// 判断是微信
+            uni.login({
+              success: function success(loginRes) {
+                console.log(loginRes);
+                if (loginRes.code) {
+                  uni.request({
+                    url: that.$axiosw.interface + that.$axiosw.data[55].
+                    interface,
+                    method: "POST",
+                    data: {
+                      code: loginRes.code },
+
+                    header: {
+                      Authorization: that.token,
+                      "Content-Type": "application/x-www-form-urlencoded" },
+
+                    success: function success(res) {
+                      console.log(res);
+                      var info = res.data.data;
+                      console.log(info);
+                      if (res.data.status == 0) {
+                        uni.setStorageSync("loginType",
+                        '0');
+                        uni.setStorageSync("open_id",
+                        info.openid); //获取的open_id
+                        uni.setStorageSync("sessionKey",
+                        info.session_key);
+                        // 获取的sessionKey
+                      }
+                    } });
+
+                }
+
+              } });
+
+          }
+        } });
+
       uni.request({
         method: "post",
         url: that.$axiosw.interface + that.$axiosw.data[0].interface,

@@ -267,10 +267,13 @@ var _default =
       } });
 
   },
-  mounted: function mounted() {
+  onShow: function onShow() {
     if (this.show == false) {
       this.detection();
     }
+
+  },
+  mounted: function mounted() {
   },
   methods: {
     manual: function manual() {
