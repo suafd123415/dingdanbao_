@@ -120,7 +120,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var l0 = _vm.__map(_vm.dataList, function(item, __i0__) {
+  var l0 = _vm.__map(_vm.dataList, function(item, index) {
     var $orig = _vm.__get_orig(item)
 
     var m0 =
@@ -266,7 +266,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/mescroll-uni/components/mescroll-uni/mescroll-mixins.js */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
 //
 //
 //
@@ -345,10 +349,8 @@ var _default = { mixins: [_mescrollMixins.default], // 使用mixin
       var pageSize = page.num; // 页长, 默认每页10条
       uni.request({ method: "post", url: that.$axiosw.interface + that.$axiosw.data[53].interface, data: { shopId: that.id, num: pageNum, page: pageSize }, transformRequest: [function (data) {var ret = "";ret = that.$qs.stringify(data);return ret;}], header: { Authorization: that.token, "Content-Type": "application/x-www-form-urlencoded" }, success: function success(data) {console.log(data.data); // 接口返回的当前页数据列表 (数组)
           var curPageData = data.data; // // 接口返回的当前页数据长度 (如列表有26个数据,当前页返回8个,则curPageLen=8)
-          var curPageLen = curPageData.data.accountBooks.length;
-          // // 接口返回的总数据量(如列表有26个数据,每页10条,共3页; 则totalSize=26)
-          var totalSize = curPageData.data.num;
-          // // 接口返回的是否有下一页 (true/false)
+          var curPageLen = curPageData.data.accountBooks.length; // // 接口返回的总数据量(如列表有26个数据,每页10条,共3页; 则totalSize=26)
+          var totalSize = curPageData.data.num; // // 接口返回的是否有下一页 (true/false)
           // let hasNext = data.xxx;
 
           //设置列表数据

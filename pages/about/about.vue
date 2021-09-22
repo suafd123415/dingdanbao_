@@ -22,7 +22,7 @@
       <!-- 使用 title 插槽来自定义标题 -->
       <template #title>
         <span class="custom-title">检测更新</span>
-        <van-tag type="danger" color="transparent">new</van-tag>
+        <!-- <van-tag type="danger" color="transparent">new</van-tag> -->
       </template>
     </van-cell>
 	</view>

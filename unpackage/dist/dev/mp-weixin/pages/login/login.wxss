@@ -83,6 +83,8 @@
 	font-size: 36rpx;
 	margin: 120rpx auto 0;
 	border-radius: 80rpx;
+	background-color: #5563ED !important;
+	color: #fff !important;
 }
 .code {
 	float: right;

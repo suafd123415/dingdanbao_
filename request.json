@@ -1,11 +1,11 @@
 {
   "interface1": "http://txjt.cn1.utools.club",
   "interface3": "http://47.104.229.228:8080",
-  "interface": "http://101.201.147.68:8080",
+  "interface7": "http://101.201.147.68:8080",
   "interface4": "http://txjt.cn1.utools.club",
   "interface5": "http://82.157.97.185:8080",
   "interface6": "https://ofp64ew07tw3.ngrok2.xiaomiqiu.cn",
-  "interface7": "http://173.100.1.109:8080",
+  "interface": "https://shop.tianxianjun.net",
   "data": [
     {
       "interface": "/shop/app/login",

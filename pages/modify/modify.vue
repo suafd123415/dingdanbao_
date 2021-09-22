@@ -39,7 +39,7 @@
 
 			</view>
 
-			<button color="#5563ED" class="exit" type="primary" block @click="changePassword()">确定</button>
+			<van-button color="#5563ED" class="exit" block @click="changePassword()">确定</van-button>
 		</view>
 		<view class="logo_view logo_view1" style="border-bottom: none;" v-else="type == 2">
 			<view class="logo_view_title">
@@ -59,7 +59,7 @@
 				</view>
 			</view>
 
-			<button color="#5563ED" class="login" block type="primary" @click="but()">提交</button>
+			<van-button color="#5563ED" class="login" block  @click="but()">提交</van-button>
 		</view>
 	</view>
 </template>

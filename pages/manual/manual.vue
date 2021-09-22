@@ -58,7 +58,7 @@
 						<input style="padding: 0 0 20rpx 0;" class="manual_in_view_right_information_view_input"
 							v-model="address_value" center clearable placeholder="详细地址（例如：**街**号**）" type="serch" />
 						<template>
-							<button @click="into()" size="small" type="primary">确定</button>
+							<van-button color="#5563ED" @click="into()" type="primary" block>确定</van-button>
 						</template>
 					</view>
 				</view>

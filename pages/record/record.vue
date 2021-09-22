@@ -2,7 +2,7 @@
 	<view  class="record">
 		<mescroll-body ref="mescrollRef" @init="mescrollInit" @up="upCallback" @down="downCallback" :down="downOption"
 			:up="upOption">
-			<view v-for="item in dataList">
+			<view v-for="(item,index) in dataList" :key='index'>
 				<div class="record_title_div">
 					<div>
 						<div class="record_div">
@@ -58,7 +58,9 @@
 				</div>
 			</view>
 		</mescroll-body>
-		<view></view>
+		<!-- <div v-if="dataList.length==0">
+		      <span class="record_span">暂时没有账单记录</span>
+		    </div> -->
 	</view>
 </template>
 

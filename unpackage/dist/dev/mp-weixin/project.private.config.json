@@ -35,6 +35,18 @@
           "pathName": "pages/payList/payList",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/modify/modify",
+          "pathName": "pages/modify/modify",
+          "query": "title=%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81&type=1",
+          "scene": null
+        },
+        {
+          "name": "pages/manual/manual",
+          "pathName": "pages/manual/manual",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -37,7 +37,7 @@
 				<button style="border: none;" color="#323643" class="logo_phone_but forget" plain type="primary"
 					@click="registered()">忘记密码？
 				</button>
-				<button color="#5563ED" class="login" block type="primary" @click="butType()">登录</button>
+				<button color="#5563ED" class="login" block type="default" @click="butType()">登录</button>
 			</div>
 		</div>
 	</div>
@@ -444,6 +444,8 @@
 		font-size: 36rpx;
 		margin: 120rpx auto 0;
 		border-radius: 80rpx;
+		background-color: #5563ED !important;
+		color: #fff !important;
 	}
 
 	.code {
