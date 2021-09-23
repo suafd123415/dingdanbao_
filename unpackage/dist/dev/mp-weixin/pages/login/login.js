@@ -220,9 +220,11 @@ var _default =
         that.val.userPhone.length != 11 ||
         !/^1[3456789]\d{9}$/.test(that.val.userPhone))
         {
-          that.$notify({
-            type: "danger",
-            message: "电话不对" });
+          uni.showToast({
+            icon: "none",
+            title: '电话不对',
+            duration: 3000,
+            position: 'top' });
 
         }
         if (that.type == false) {
@@ -254,9 +256,11 @@ var _default =
           if (that.val.code.length > 0) {
             that.denlu();
           } else {
-            that.$notify({
-              type: "danger",
-              message: "验证码不能为空" });
+            uni.showToast({
+              icon: "none",
+              title: '验证码不能为空',
+              duration: 3000,
+              position: 'top' });
 
           }
         }
@@ -355,6 +359,10 @@ var _default =
             "token",
             JSON.stringify(res.data.data.token));
 
+            uni.setStorageSync(
+            "shopPhone",
+            JSON.stringify(res.data.data.shopPhone));
+
             uni.setStorageSync("index", 0);
             uni.setStorageSync(
             "cityCode",
@@ -400,9 +408,11 @@ var _default =
         that.val.userPhone.length != 11 ||
         !/^1[3456789]\d{9}$/.test(that.val.userPhone))
         {
-          that.$notify({
-            type: "danger",
-            message: "电话不对" });
+          uni.showToast({
+            icon: "none",
+            title: '电话不对',
+            duration: 3000,
+            position: 'top' });
 
         }
         return;

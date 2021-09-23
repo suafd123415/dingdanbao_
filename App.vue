@@ -7,9 +7,9 @@
 			console.log('App Show')
 			let userInfo=uni.getStorageSync('token')
 			console.log(!userInfo)
-			if(!userInfo){
-				uni.reLaunch({
-					url:'pages/login/login'
+			if(userInfo){
+				uni.switchTab({
+					url:'pages/index/index'
 				})
 			}
 		},

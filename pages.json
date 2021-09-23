@@ -1,6 +1,14 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom" //添加自定义配置
+			}
+		
+		},{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "今日全部渠道",
@@ -60,22 +68,14 @@
 				"enablePullDownRefresh": false
 			}
 
-		}, {
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false,
-				"navigationStyle": "custom" //添加自定义配置
-			}
-
-		}, {
+		},  {
 			"path": "pages/record/record",
 			"style": {
 				"navigationBarTitleText": "配送账单",
 				"enablePullDownRefresh": false
 			}
 
-		}, 
+		},
 		{
 			"path": "pages/manual/manual",
 			"style": {
@@ -83,54 +83,51 @@
 				"enablePullDownRefresh": false
 			}
 
-		}
-	    ,{
-            "path" : "pages/recharge/recharge",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "充值记录",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/search/search",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "搜索",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/payList/payList",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/financialDetails/financialDetails",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
+		}, {
+			"path": "pages/recharge/recharge",
+			"style": {
+				"navigationBarTitleText": "充值记录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/payList/payList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/financialDetails/financialDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
 				"navigationStyle": "custom" //添加自定义配置
-            }
-            
-        }
-        ,{
-            "path" : "pages/registered/registered",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "忘记密码",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+			}
+
+		}, {
+			"path": "pages/registered/registered",
+			"style": {
+				"navigationBarTitleText": "忘记密码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/binding/binding",
+			"style": {
+				"navigationBarTitleText": "切换账号",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
 	"tabBar": {
 		"color": "#282828",
 		"selectedColor": "#207DED",
@@ -168,6 +165,8 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8",
 		"usingComponents": { //这里为方便，全局引入了所有组件，也可以在某个page下单独引用某个组件
+			"van-dropdown-menu": "/wxcomponents/vant/dropdown-menu/index",
+			"van-dropdown-item": "/wxcomponents/vant/dropdown-item/index",
 			"demo-block": "/wxcomponents/vant/demo-block/index",
 			"van-action-sheet": "/wxcomponents/vant/action-sheet/index",
 			"van-area": "/wxcomponents/vant/area/index",

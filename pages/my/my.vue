@@ -52,13 +52,13 @@
 					<van-icon class="my_bottom_right_img" name="arrow" />
 				</view>
 			</view>
-			<!-- <view class="my_bottom_list" @click="binding()">
+			<view v-if="shopPhone == '17601615572' || shopPhone == '17346558815'" class="my_bottom_list" @click="binding()">
 				<img class="my_bottom_list_img" src="../../static/image/icon_receipts.png" />
-				<span>绑定账号</span>
+				<span>切换账号</span>
 				<view class="my_bottom_right">
 					<van-icon class="my_bottom_right_img" name="arrow" />
 				</view>
-			</view> -->
+			</view>
 		</view>
 		<view class="manual">
 			<view class="my_bottom_list" @click="manual()">
@@ -90,7 +90,8 @@
 				isDisabledSubmitBtn: true, //按钮是否禁用
 				radio: "1",
 				payType: false,
-				current: ""
+				current: "",
+				shopPhone:''
 			}
 		},
 		onLoad() {
@@ -108,6 +109,8 @@
 			})
 		},
 		onShow() {
+			    this.shopPhone = JSON.parse(uni.getStorageSync("shopPhone"));
+
 			if (this.show == false) {
 				this.detection();
 			}
@@ -191,6 +194,12 @@
 			      	url:"../recharge/recharge"
 			      })
 			    },
+				binding(){
+				uni.navigateTo({
+				  	url:"../binding/binding"
+				  })
+				},	
+				
 			interactionDetection(res) {
 				var that = this;
 				console.log(res)

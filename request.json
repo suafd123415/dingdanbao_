@@ -4,7 +4,7 @@
   "interface7": "http://101.201.147.68:8080",
   "interface4": "http://txjt.cn1.utools.club",
   "interface5": "http://82.157.97.185:8080",
-  "interface6": "https://ofp64ew07tw3.ngrok2.xiaomiqiu.cn",
+  "interface8": "http://173.100.1.124:8080",
   "interface": "https://shop.tianxianjun.net",
   "data": [
     {
@@ -291,6 +291,11 @@
 		"interface": "/shop/app/pay/minPrePay",
 		"name": "充值",
 		"subscript": 56
-	}
+	},
+	{
+	      "interface": "/shop/app/queryShopAccount",
+	      "name": "查看所有账号密码",
+	      "subscript": 57
+	    }
   ]
 }

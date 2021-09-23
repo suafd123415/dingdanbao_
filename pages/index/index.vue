@@ -454,10 +454,11 @@
 			}
 			// console.log(this.result);
 		},
+		
 		onLoad() {
 			var that = this;
-			that.id = JSON.parse(uni.getStorageSync("id"));
-			that.token = JSON.parse(uni.getStorageSync("token"));
+			// that.id = JSON.parse(uni.getStorageSync("id"));
+			// that.token = JSON.parse(uni.getStorageSync("token"));
 			//#ifdef MP
 			this.top = 60
 			//#endif
@@ -470,6 +471,9 @@
 			})
 		},
 		onShow() {
+			var that = this;
+			that.id = JSON.parse(uni.getStorageSync("id"));
+			that.token = JSON.parse(uni.getStorageSync("token"));
 			this.mescroll.triggerDownScroll()
 		},
 		mounted() {

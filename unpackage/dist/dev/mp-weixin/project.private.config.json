@@ -47,6 +47,12 @@
           "pathName": "pages/manual/manual",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/binding/binding",
+          "pathName": "pages/binding/binding",
+          "query": "",
+          "scene": null
         }
       ]
     }

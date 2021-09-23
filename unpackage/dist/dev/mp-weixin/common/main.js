@@ -104,9 +104,9 @@ __webpack_require__.r(__webpack_exports__);
     console.log('App Show');
     var userInfo = uni.getStorageSync('token');
     console.log(!userInfo);
-    if (!userInfo) {
-      uni.reLaunch({
-        url: 'pages/login/login' });
+    if (userInfo) {
+      uni.switchTab({
+        url: 'pages/index/index' });
 
     }
   },

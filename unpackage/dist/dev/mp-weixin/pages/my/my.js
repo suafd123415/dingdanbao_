@@ -109,7 +109,12 @@ var render = function() {
 
   var m5 = __webpack_require__(/*! ../../static/image/icon_receipts.png */ 26)
 
-  var m6 = __webpack_require__(/*! ../../static/image/icon_manual.png */ 71)
+  var m6 =
+    _vm.shopPhone == "17601615572" || _vm.shopPhone == "17346558815"
+      ? __webpack_require__(/*! ../../static/image/icon_receipts.png */ 26)
+      : null
+
+  var m7 = __webpack_require__(/*! ../../static/image/icon_manual.png */ 71)
 
   _vm.$mp.data = Object.assign(
     {},
@@ -121,7 +126,8 @@ var render = function() {
         m3: m3,
         m4: m4,
         m5: m5,
-        m6: m6
+        m6: m6,
+        m7: m7
       }
     }
   )
@@ -250,7 +256,8 @@ var _default =
       isDisabledSubmitBtn: true, //按钮是否禁用
       radio: "1",
       payType: false,
-      current: "" };
+      current: "",
+      shopPhone: '' };
 
   },
   onLoad: function onLoad() {
@@ -268,6 +275,8 @@ var _default =
 
   },
   onShow: function onShow() {
+    this.shopPhone = JSON.parse(uni.getStorageSync("shopPhone"));
+
     if (this.show == false) {
       this.detection();
     }
@@ -351,6 +360,12 @@ var _default =
         url: "../recharge/recharge" });
 
     },
+    binding: function binding() {
+      uni.navigateTo({
+        url: "../binding/binding" });
+
+    },
+
     interactionDetection: function interactionDetection(res) {
       var that = this;
       console.log(res);

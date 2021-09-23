@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/message/message",
     "pages/finance/finance",
@@ -9,14 +10,14 @@
     "pages/accountSecurity/accountSecurity",
     "pages/modify/modify",
     "pages/businessCenter/businessCenter",
-    "pages/login/login",
     "pages/record/record",
     "pages/manual/manual",
     "pages/recharge/recharge",
     "pages/search/search",
     "pages/payList/payList",
     "pages/financialDetails/financialDetails",
-    "pages/registered/registered"
+    "pages/registered/registered",
+    "pages/binding/binding"
   ],
   "subPackages": [],
   "window": {
@@ -59,6 +60,8 @@
   },
   "permission": {},
   "usingComponents": {
+    "van-dropdown-menu": "/wxcomponents/vant/dropdown-menu/index",
+    "van-dropdown-item": "/wxcomponents/vant/dropdown-item/index",
     "demo-block": "/wxcomponents/vant/demo-block/index",
     "van-action-sheet": "/wxcomponents/vant/action-sheet/index",
     "van-area": "/wxcomponents/vant/area/index",
@@ -88,6 +91,5 @@
     "van-collapse-item": "/wxcomponents/vant/collapse-item/index",
     "van-picker": "/wxcomponents/vant/picker/index",
     "van-overlay": "/wxcomponents/vant/overlay/index"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }
