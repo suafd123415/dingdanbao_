@@ -427,16 +427,27 @@ var _default = { mixins: [_mescrollMixins.default], // 使用mixin
           "Content-Type": "application/x-www-form-urlencoded" },
 
         success: function success(res) {
-          console.log(res.data);
-          var curPageData = res.data;
-          var curPageLen = curPageData.data.shopList.length;
-          var totalSize = curPageData.data.num;
-          if (page.num == 0) _this.dataList = [];
-          _this.dataList = _this.dataList.concat(res.data.data.shopList); //追加新数据
-          _this.mescroll.endBySize(curPageLen, totalSize);
-          setTimeout(function () {
-            _this.mescroll.endSuccess(curPageLen);
-          }, 20);
+          if (res.data.status == 0) {
+            console.log(res.data);
+            var curPageData = res.data;
+            var curPageLen = curPageData.data.shopList.length;
+            var totalSize = curPageData.data.num;
+            if (page.num == 0) _this.dataList = [];
+            _this.dataList = _this.dataList.concat(res.data.data.shopList); //追加新数据
+            _this.mescroll.endBySize(curPageLen, totalSize);
+            setTimeout(function () {
+              _this.mescroll.endSuccess(curPageLen);
+            }, 20);
+          } else {
+            _this.mescroll.endErr();
+            uni.showToast({
+              icon: "none",
+              title: res.data.msg,
+              duration: 3000,
+              position: 'top' });
+
+          }
+
         },
         fail: function fail() {
           //  请求失败,隐藏加载状态

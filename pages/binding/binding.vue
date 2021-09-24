@@ -267,7 +267,8 @@
 						"Content-Type": "application/x-www-form-urlencoded"
 					},
 					success: (res) => {
-						console.log(res.data);
+						if(res.data.status==0){
+							console.log(res.data);
 						let curPageData = res.data
 						let curPageLen = curPageData.data.shopList.length;
 						let totalSize = curPageData.data.num;
@@ -277,6 +278,16 @@
 						setTimeout(() => {
 							this.mescroll.endSuccess(curPageLen)
 						}, 20)
+						}else{
+							this.mescroll.endErr()
+							uni.showToast({
+								icon: "none",
+								title: res.data.msg,
+								duration: 3000,
+								position: 'top'
+							})
+						}
+						
 					},
 					fail: () => {
 						//  请求失败,隐藏加载状态
