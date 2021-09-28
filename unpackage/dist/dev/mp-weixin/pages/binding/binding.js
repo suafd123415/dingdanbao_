@@ -252,21 +252,11 @@ var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/uni_modul
 //
 //
 var _default = { mixins: [_mescrollMixins.default], // 使用mixin
-  data: function data() {return { id: "", page: 0, num: 10, shopId: "", names: "", telephone: "", shopBoss: "", token: "", shopPhone: "", initial: false, loading: false, finished: false, list: [], dataList: [], value1: 0, mescroll: null, // mescroll实例对象 (此行可删,mixins已默认)
+  data: function data() {return { id: "", page: 0, num: 10, telephone: "", token: "", shopPhone: "", dataList: [], value1: 0, mescroll: null, // mescroll实例对象 (此行可删,mixins已默认)
       // 上拉加载的配置(可选, 绝大部分情况无需配置)
       downOption: { use: false }, upOption: { page: { size: 10, num: 0 }, textNoMore: '没有更多了', noMoreSize: 5, // 配置列表的总数量要大于等于5条才显示'-- END --'的提示
         empty: { tip: '暂无相关数据' } } };}, onLoad: function onLoad() {var that = this;that.id = JSON.parse(uni.getStorageSync("id"));that.token = JSON.parse(uni.getStorageSync("token"));that.shopPhone = JSON.parse(uni.getStorageSync("shopPhone")); // that.load_more();
-  }, mounted: function mounted() {}, methods: { bianhua: function bianhua(value) {var that = this;console.log(value);that.names = "";that.telephone = "";
-      that.shopBoss = "";
-      that.shopId = "";
-      that.value1 = value.detail;
-    },
-    return_page: function return_page() {
-      this.$router.push({
-        path: "/" });
-
-    },
-    sousuo: function sousuo() {
+  }, mounted: function mounted() {}, methods: { bianhua: function bianhua(value) {var that = this;console.log(value);that.telephone = "";that.value1 = value.detail;}, return_page: function return_page() {this.$router.push({ path: "/" });}, sousuo: function sousuo() {
       var that = this;
       console.log(that.telephone);
       console.log(that.value1);

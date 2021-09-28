@@ -60,8 +60,6 @@
   },
   "permission": {},
   "usingComponents": {
-    "van-dropdown-menu": "/wxcomponents/vant/dropdown-menu/index",
-    "van-dropdown-item": "/wxcomponents/vant/dropdown-item/index",
     "demo-block": "/wxcomponents/vant/demo-block/index",
     "van-action-sheet": "/wxcomponents/vant/action-sheet/index",
     "van-area": "/wxcomponents/vant/area/index",
@@ -91,6 +89,5 @@
     "van-collapse-item": "/wxcomponents/vant/collapse-item/index",
     "van-picker": "/wxcomponents/vant/picker/index",
     "van-overlay": "/wxcomponents/vant/overlay/index"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

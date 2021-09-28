@@ -53,16 +53,9 @@
 				id: "",
 				page: 0,
 				num: 10,
-				shopId: "",
-				names: "",
 				telephone: "",
-				shopBoss: "",
 				token: "",
 				shopPhone: "",
-				initial: false,
-				loading: false,
-				finished: false,
-				list: [],
 				dataList: [],
 				value1: 0,
 				mescroll: null, // mescroll实例对象 (此行可删,mixins已默认)
@@ -95,10 +88,7 @@
 			bianhua(value) {
 				let that = this
 				console.log(value)
-				that.names = "";
 				that.telephone = "";
-				that.shopBoss = "";
-				that.shopId = "";
 				that.value1 = value.detail
 			},
 			return_page() {
