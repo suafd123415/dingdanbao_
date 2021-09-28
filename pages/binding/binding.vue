@@ -8,36 +8,10 @@
       <div>查看账号</div>
     </div> -->
 		<div style="display:flex;margin-top:20px">
-			<div style="width:30%">
-				<van-dropdown-menu z-index='100'>
-					<van-dropdown-item @change='bianhua' v-model="value1" :options="option1" />
-				</van-dropdown-menu>
-			</div>
-			<div v-if="value1 == 0" style="width: 70%;display: flex;
+			<div v-if="value1 == 0" style="width: 95%;display: flex;
     align-items: center;
-    background: #fff;">
-				<uni-easyinput v-model="telephone" placeholder="请输入内容">
-				</uni-easyinput>
-				<van-button class='van_but' slot="button" size="small" type="primary" @click="sousuo">搜索</van-button>
-			</div>
-			<div v-if="value1 == 1" style="width:70%;display: flex;
-    align-items: center;
-    background: #fff;">
-				<uni-easyinput v-model="names" placeholder="请输入内容">
-				</uni-easyinput>
-				<van-button class='van_but' slot="button" size="small" type="primary" @click="sousuo">搜索</van-button>
-			</div>
-			<div v-if="value1 == 2" style="width:70%;display: flex;
-    align-items: center;
-    background: #fff;">
-				<uni-easyinput v-model="shopId" placeholder="请输入内容">
-				</uni-easyinput>
-				<van-button class='van_but' slot="button" size="small" type="primary" @click="sousuo">搜索</van-button>
-			</div>
-			<div v-if="value1 == 3" style="width:70%;display: flex;
-    align-items: center;
-    background: #fff;">
-				<uni-easyinput v-model="shopBoss" placeholder="请输入内容">
+    background: #fff;margin: 0 auto;">
+				<uni-easyinput style="width: 80%;" v-model="telephone" placeholder="请输入内容">
 				</uni-easyinput>
 				<van-button class='van_but' slot="button" size="small" type="primary" @click="sousuo">搜索</van-button>
 			</div>
@@ -107,23 +81,6 @@
 						tip: '暂无相关数据'
 					}
 				},
-				option1: [{
-						text: "手机号",
-						value: 0
-					},
-					{
-						text: "店铺名",
-						value: 1
-					},
-					{
-						text: "店铺ID",
-						value: 2
-					},
-					{
-						text: "老板姓名",
-						value: 3
-					}
-				]
 			};
 		},
 		onLoad() {
@@ -249,10 +206,7 @@
 					data: {
 						page: pageNum,
 						size: pageSize,
-						id: that.shopId,
-						name: that.names,
-						telephone: that.telephone,
-						shopBoss: that.shopBoss,
+						content: that.telephone,
 						theTotalAccount: that.shopPhone
 					},
 					transformRequest: [
