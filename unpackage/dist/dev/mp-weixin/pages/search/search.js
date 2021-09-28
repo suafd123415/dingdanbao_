@@ -120,11 +120,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var m0 = __webpack_require__(/*! ../../static/image/icon_seaver.png */ 24)
+  var m0 = __webpack_require__(/*! ../../static/image/icon_seaver.png */ 33)
 
-  var m5 = __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 25)
+  var m5 = __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 34)
 
-  var m6 = __webpack_require__(/*! ../../static/image/icon_receipts.png */ 26)
+  var m6 = __webpack_require__(/*! ../../static/image/icon_receipts.png */ 35)
 
   var l0 = _vm.sua
     ? _vm.__map(_vm.dataList, function(item, index) {
@@ -135,22 +135,22 @@ var render = function() {
           item.riderInfo != "" &&
           item.status == 4 &&
           item.riderInfo.status == 4
-            ? __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 25)
+            ? __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 34)
             : null
         var m2 =
           ((item.orderType != 10 && item.status == 3) || item.status == 4) &&
           item.riderInfo != "" &&
           item.status == 4 &&
           item.riderInfo.status == 101
-            ? __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 25)
+            ? __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 34)
             : null
         var m3 =
           item.status == 101 && item.riderInfo != ""
-            ? __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 25)
+            ? __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 34)
             : null
         var m4 =
           item.status == 102 && item.riderInfo != ""
-            ? __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 25)
+            ? __webpack_require__(/*! ../../static/image/icon_contactWithRider.png */ 34)
             : null
         return {
           $orig: $orig,
@@ -491,7 +491,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/mescroll-uni/components/mescroll-uni/mescroll-mixins.js */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/mescroll-uni/components/mescroll-uni/mescroll-mixins.js */ 44));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //

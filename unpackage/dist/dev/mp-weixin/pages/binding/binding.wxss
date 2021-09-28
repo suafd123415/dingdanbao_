@@ -4,7 +4,7 @@
 }
 
 
-.van_but.data-v-18847812{
+.van_but.data-v-18847812 {
 		margin-left: 45rpx;
 }
 .appproject.data-v-18847812 {
@@ -59,6 +59,7 @@
 .bind_flex ._div ._span.data-v-18847812 {
 		font-size: 40rpx;
 }
+
 	/* .recharge {
   background: #f6f6f6;
 } */

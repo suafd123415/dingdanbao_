@@ -98,7 +98,7 @@ var components
 try {
   components = {
     uniEasyinput: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 276))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 226))
     },
     mescrollBody: function() {
       return Promise.all(/*! import() | uni_modules/mescroll-uni/components/mescroll-body/mescroll-body */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/mescroll-uni/components/mescroll-body/mescroll-body")]).then(__webpack_require__.bind(null, /*! @/uni_modules/mescroll-uni/components/mescroll-body/mescroll-body.vue */ 213))
@@ -230,7 +230,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/mescroll-uni/components/mescroll-uni/mescroll-mixins.js */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+
+var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/mescroll-uni/components/mescroll-uni/mescroll-mixins.js */ 44));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
 //
 //
 //
@@ -306,9 +308,7 @@ var _default = { mixins: [_mescrollMixins.default], // 使用mixin
       // 上拉加载的配置(可选, 绝大部分情况无需配置)
       downOption: { use: false }, upOption: { page: { size: 10, num: 0 }, textNoMore: '没有更多了', noMoreSize: 5, // 配置列表的总数量要大于等于5条才显示'-- END --'的提示
         empty: { tip: '暂无相关数据' } }, option1: [{ text: "手机号", value: 0 }, { text: "店铺名", value: 1 }, { text: "店铺ID", value: 2 }, { text: "老板姓名", value: 3 }] };}, onLoad: function onLoad() {var that = this;that.id = JSON.parse(uni.getStorageSync("id"));that.token = JSON.parse(uni.getStorageSync("token"));that.shopPhone = JSON.parse(uni.getStorageSync("shopPhone")); // that.load_more();
-  }, mounted: function mounted() {}, methods: { bianhua: function bianhua(value) {var that = this;console.log(value);that.names = "";that.telephone = "";that.shopBoss = "";that.shopId = "";that.value1 = value.detail;}, return_page: function return_page() {this.$router.push({ path: "/" });
-
-    },
+  }, mounted: function mounted() {}, methods: { bianhua: function bianhua(value) {var that = this;console.log(value);that.names = "";that.telephone = "";that.shopBoss = "";that.shopId = "";that.value1 = value.detail;}, return_page: function return_page() {this.$router.push({ path: "/" });},
     sousuo: function sousuo() {
       var that = this;
       console.log(that.telephone);

@@ -30,7 +30,7 @@
 				</view>
 				<view class="logo_div_title">
 					<view class="logo_div1 forget_height">
-						<input class="logo_div_input" maxlength="6" placeholder="请输入修改密码" v-model="val.passWord" />
+						<input class="logo_div_input" maxlength="15" placeholder="请输入修改密码" v-model="val.passWord" />
 						<i class="progressBar"></i>
 					</view>
 				</view>
@@ -196,25 +196,35 @@
 					that.val.userPhone.length != 11 ||
 					!/^1[3456789]\d{9}$/.test(that.val.userPhone)
 				) {
-					that.$notify({
-						type: "danger",
-						message: "电话不对"
-					});
+					uni.showToast({
+						icon: "none",
+						title:'电话不对',
+						duration: 3000,
+						position: 'top'
+					})
 				} else if (that.val.verCode.length == 0) {
-					that.$notify({
-						type: "danger",
-						message: "验证码未输入"
-					});
-				} else if (that.val.passWord.length != 6) {
-					that.$notify({
-						type: "danger",
-						message: "密码数量不够"
-					});
-				} else if (!reg.test(that.val.passWord)) {
-					that.$notify({
-						type: "danger",
-						message: "密码只能输入英文和数字"
-					});
+					uni.showToast({
+						icon: "none",
+						title:'验证码未输入',
+						duration: 3000,
+						position: 'top'
+					})
+				} 
+				// else if (that.val.passWord.length > 6) {
+				// 	uni.showToast({
+				// 		icon: "none",
+				// 		title:'密码数量不对',
+				// 		duration: 3000,
+				// 		position: 'top'
+				// 	})
+				// }
+				 else if (!reg.test(that.val.passWord)) {
+					uni.showToast({
+						icon: "none",
+						title:'密码只能输入英文和数字',
+						duration: 3000,
+						position: 'top'
+					})
 				} else {
 					uni.request({
 							method: "post",

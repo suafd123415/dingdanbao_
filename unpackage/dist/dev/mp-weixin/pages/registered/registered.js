@@ -328,84 +328,94 @@ var _default =
       that.val.userPhone.length != 11 ||
       !/^1[3456789]\d{9}$/.test(that.val.userPhone))
       {
-        that.$notify({
-          type: "danger",
-          message: "电话不对" });
+        uni.showToast({
+          icon: "none",
+          title: '电话不对',
+          duration: 3000,
+          position: 'top' });
 
       } else if (that.val.verCode.length == 0) {
-        that.$notify({
-          type: "danger",
-          message: "验证码未输入" });
+        uni.showToast({
+          icon: "none",
+          title: '验证码未输入',
+          duration: 3000,
+          position: 'top' });
 
-      } else if (that.val.passWord.length != 6) {
-        that.$notify({
-          type: "danger",
-          message: "密码数量不够" });
-
-      } else if (!reg.test(that.val.passWord)) {
-        that.$notify({
-          type: "danger",
-          message: "密码只能输入英文和数字" });
-
-      } else {
-        uni.request({
-          method: "post",
-          url: that.$axiosw.interface + that.$axiosw.data[3].interface,
-          data: {
-            userPhone: that.val.userPhone,
-            verCode: that.val.verCode,
-            userPassword: that.val.passWord },
-
-          transformRequest: [
-          function (data) {
-            var ret = "";
-            ret = that.$qs.stringify(data);
-            return ret;
-          }],
-
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded" } }).
-
-
-        then(function (res) {
-          if (res[1].data.status == 0) {
-            var my = {
-              shop_name: res[1].data.data.shop_name,
-              shop_phone: res[1].data.data.shop_phone,
-              customer_Phone: res[1].data.data.customer_Phone,
-              version: res[1].data.data.version,
-              signature: res[1].data.data.signature };
-
-            uni.setStorageSync("my", JSON.stringify(my));
-            uni.setStorageSync(
-            "id",
-            JSON.stringify(res[1].data.data.shop_id));
-
-            uni.setStorageSync(
-            "token",
-            JSON.stringify(res[1].data.data.token));
-
-            uni.showToast({
-              icon: "success",
-              title: '修改成功',
-              duration: 3000,
-              position: 'top' });
-
-            setTimeout(function () {
-              uni.navigateTo({
-                url: '../login/login' });
-
-            }, 1000);
-          } else {
-            uni.showToast({
-              icon: "none",
-              title: res[1].data.msg,
-              duration: 3000,
-              position: 'top' });
-
-          }
-        });
       }
+      // else if (that.val.passWord.length > 6) {
+      // 	uni.showToast({
+      // 		icon: "none",
+      // 		title:'密码数量不对',
+      // 		duration: 3000,
+      // 		position: 'top'
+      // 	})
+      // }
+      else if (!reg.test(that.val.passWord)) {
+          uni.showToast({
+            icon: "none",
+            title: '密码只能输入英文和数字',
+            duration: 3000,
+            position: 'top' });
+
+        } else {
+          uni.request({
+            method: "post",
+            url: that.$axiosw.interface + that.$axiosw.data[3].interface,
+            data: {
+              userPhone: that.val.userPhone,
+              verCode: that.val.verCode,
+              userPassword: that.val.passWord },
+
+            transformRequest: [
+            function (data) {
+              var ret = "";
+              ret = that.$qs.stringify(data);
+              return ret;
+            }],
+
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded" } }).
+
+
+          then(function (res) {
+            if (res[1].data.status == 0) {
+              var my = {
+                shop_name: res[1].data.data.shop_name,
+                shop_phone: res[1].data.data.shop_phone,
+                customer_Phone: res[1].data.data.customer_Phone,
+                version: res[1].data.data.version,
+                signature: res[1].data.data.signature };
+
+              uni.setStorageSync("my", JSON.stringify(my));
+              uni.setStorageSync(
+              "id",
+              JSON.stringify(res[1].data.data.shop_id));
+
+              uni.setStorageSync(
+              "token",
+              JSON.stringify(res[1].data.data.token));
+
+              uni.showToast({
+                icon: "success",
+                title: '修改成功',
+                duration: 3000,
+                position: 'top' });
+
+              setTimeout(function () {
+                uni.navigateTo({
+                  url: '../login/login' });
+
+              }, 1000);
+            } else {
+              uni.showToast({
+                icon: "none",
+                title: res[1].data.msg,
+                duration: 3000,
+                position: 'top' });
+
+            }
+          });
+        }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

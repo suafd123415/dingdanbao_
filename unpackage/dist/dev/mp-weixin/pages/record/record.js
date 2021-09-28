@@ -124,27 +124,27 @@ var render = function() {
     var $orig = _vm.__get_orig(item)
 
     var m0 =
-      item.plat == "MT" ? __webpack_require__(/*! ../../static/image/meituan.png */ 28) : null
+      item.plat == "MT" ? __webpack_require__(/*! ../../static/image/meituan.png */ 37) : null
     var m1 =
-      item.plat == "FN" ? __webpack_require__(/*! ../../static/image/hummingbird.png */ 29) : null
+      item.plat == "FN" ? __webpack_require__(/*! ../../static/image/hummingbird.png */ 38) : null
     var m2 =
       item.plat == "SHANSONG"
-        ? __webpack_require__(/*! ../../static/image/shansong.png */ 30)
+        ? __webpack_require__(/*! ../../static/image/shansong.png */ 39)
         : null
-    var m3 = item.plat == "DADA" ? __webpack_require__(/*! ../../static/image/dada.png */ 31) : null
+    var m3 = item.plat == "DADA" ? __webpack_require__(/*! ../../static/image/dada.png */ 40) : null
     var m4 =
       item.plat == "SF"
-        ? __webpack_require__(/*! ../../static/image/suitableAbundant.png */ 27)
+        ? __webpack_require__(/*! ../../static/image/suitableAbundant.png */ 36)
         : null
     var m5 =
-      item.orderType == "1" ? __webpack_require__(/*! ../../static/image/meituan.png */ 28) : null
+      item.orderType == "1" ? __webpack_require__(/*! ../../static/image/meituan.png */ 37) : null
     var m6 =
       item.orderType == "2"
-        ? __webpack_require__(/*! ../../static/image/icon_hungryBest.png */ 54)
+        ? __webpack_require__(/*! ../../static/image/icon_hungryBest.png */ 63)
         : null
     var m7 =
       item.orderType == "99"
-        ? __webpack_require__(/*! ../../static/image/icon_freshCounty.png */ 53)
+        ? __webpack_require__(/*! ../../static/image/icon_freshCounty.png */ 62)
         : null
     return {
       $orig: $orig,
@@ -268,7 +268,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/mescroll-uni/components/mescroll-uni/mescroll-mixins.js */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _mescrollMixins = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/mescroll-uni/components/mescroll-uni/mescroll-mixins.js */ 44));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //

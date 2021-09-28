@@ -9,35 +9,35 @@
     </div> -->
 		<div style="display:flex;margin-top:20px">
 			<div style="width:30%">
-				<van-dropdown-menu>
+				<van-dropdown-menu z-index='100'>
 					<van-dropdown-item @change='bianhua' v-model="value1" :options="option1" />
 				</van-dropdown-menu>
 			</div>
 			<div v-if="value1 == 0" style="width: 70%;display: flex;
     align-items: center;
     background: #fff;">
-				<uni-easyinput v-model="telephone" placeholder="请输入内容"  >
+				<uni-easyinput v-model="telephone" placeholder="请输入内容">
 				</uni-easyinput>
 				<van-button class='van_but' slot="button" size="small" type="primary" @click="sousuo">搜索</van-button>
 			</div>
 			<div v-if="value1 == 1" style="width:70%;display: flex;
     align-items: center;
     background: #fff;">
-				<uni-easyinput v-model="names" placeholder="请输入内容"  >
+				<uni-easyinput v-model="names" placeholder="请输入内容">
 				</uni-easyinput>
 				<van-button class='van_but' slot="button" size="small" type="primary" @click="sousuo">搜索</van-button>
 			</div>
 			<div v-if="value1 == 2" style="width:70%;display: flex;
     align-items: center;
     background: #fff;">
-				<uni-easyinput v-model="shopId" placeholder="请输入内容"  >
+				<uni-easyinput v-model="shopId" placeholder="请输入内容">
 				</uni-easyinput>
 				<van-button class='van_but' slot="button" size="small" type="primary" @click="sousuo">搜索</van-button>
 			</div>
 			<div v-if="value1 == 3" style="width:70%;display: flex;
     align-items: center;
     background: #fff;">
-				<uni-easyinput v-model="shopBoss" placeholder="请输入内容"  >
+				<uni-easyinput v-model="shopBoss" placeholder="请输入内容">
 				</uni-easyinput>
 				<van-button class='van_but' slot="button" size="small" type="primary" @click="sousuo">搜索</van-button>
 			</div>
@@ -54,12 +54,13 @@
 								<span class="record_title_span">{{ item.name }}</span>
 							</div>
 							<div class="record_div">
-								<span>手机号：{{ item.telephone }}</span>
-								<span>密码：{{ item.passWord }}</span>
+								<text user-select='true'>手机号：{{ item.telephone }}</text>
+								<text user-select='true'>密码：{{ item.passWord }}</text>
 							</div>
 							<div class="record_div">
 								<span>老板姓名：{{ item.shopBoss }}</span>
-								<van-button type="primary" size="small" @click="denlu(item.telephone, item.passWord)">切换
+								<van-button style='z-index:9' type="primary" size="small"
+									@click="denlu(item.telephone, item.passWord)">切换
 								</van-button>
 							</div>
 						</div>
@@ -132,8 +133,7 @@
 			that.shopPhone = JSON.parse(uni.getStorageSync("shopPhone"));
 			// that.load_more();
 		},
-		mounted() {
-		},
+		mounted() {},
 		methods: {
 			bianhua(value) {
 				let that = this
@@ -153,7 +153,7 @@
 				let that = this;
 				console.log(that.telephone);
 				console.log(that.value1)
-				that.dataList=[]
+				that.dataList = []
 				that.mescroll.resetUpScroll()
 			},
 			denlu(userPhone, passWord) {
@@ -188,7 +188,7 @@
 								shopBoos: res.data.data.shopBoos
 							};
 							var loginAccount = {
-								userPhone:userPhone,
+								userPhone: userPhone,
 								passWord: passWord
 							};
 							uni.setStorageSync("my", JSON.stringify(my));
@@ -267,18 +267,18 @@
 						"Content-Type": "application/x-www-form-urlencoded"
 					},
 					success: (res) => {
-						if(res.data.status==0){
+						if (res.data.status == 0) {
 							console.log(res.data);
-						let curPageData = res.data
-						let curPageLen = curPageData.data.shopList.length;
-						let totalSize = curPageData.data.num;
-						if (page.num == 0) this.dataList = [];
-						this.dataList = this.dataList.concat(res.data.data.shopList); //追加新数据
-						this.mescroll.endBySize(curPageLen, totalSize);
-						setTimeout(() => {
-							this.mescroll.endSuccess(curPageLen)
-						}, 20)
-						}else{
+							let curPageData = res.data
+							let curPageLen = curPageData.data.shopList.length;
+							let totalSize = curPageData.data.num;
+							if (page.num == 0) this.dataList = [];
+							this.dataList = this.dataList.concat(res.data.data.shopList); //追加新数据
+							this.mescroll.endBySize(curPageLen, totalSize);
+							setTimeout(() => {
+								this.mescroll.endSuccess(curPageLen)
+							}, 20)
+						} else {
 							this.mescroll.endErr()
 							uni.showToast({
 								icon: "none",
@@ -287,7 +287,7 @@
 								position: 'top'
 							})
 						}
-						
+
 					},
 					fail: () => {
 						//  请求失败,隐藏加载状态
@@ -304,9 +304,10 @@
 	}
 </style>
 <style scoped>
-	.van_but{
+	.van_but {
 		margin-left: 45rpx;
 	}
+
 	.appproject {
 		margin-top: 8rpx;
 		overflow-x: hidden;
