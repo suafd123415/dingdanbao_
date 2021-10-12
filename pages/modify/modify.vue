@@ -59,7 +59,7 @@
 				</view>
 			</view>
 
-			<van-button color="#5563ED" class="login" block  @click="but()">提交</van-button>
+			<van-button color="#5563ED" class="login" block @click="but()">提交</van-button>
 		</view>
 	</view>
 </template>
@@ -205,7 +205,7 @@
 						duration: 3000,
 						position: 'top'
 					})
-				}else if(!/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/.test(that.val[0].value)){
+				} else if (!/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/.test(that.val[0].value)) {
 					uni.showToast({
 						icon: "none",
 						title: '新密码太简单，请设置数字和字母组合密码',
